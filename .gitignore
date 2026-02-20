@@ -1,0 +1,11 @@
+# Eval results (can be large)
+eval/capability/results/*.json
+eval/capability/results/*.jsonl
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
