@@ -1,6 +1,9 @@
 # Eval results (can be large)
 eval/capability/results/*.json
 eval/capability/results/*.jsonl
+eval/capability/results/tau/
+eval/alignment/results/*.json
+eval/alignment/results/*.jsonl
 
 # Python
 __pycache__/
