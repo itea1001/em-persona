@@ -1,0 +1,229 @@
+# Persona Vector Experiment Log
+
+## 2026-02-22
+
+### Setup
+
+- Base model: Qwen2.5-0.5B-Instruct at `/net/projects2/chai-lab/shared_models/Qwen/Qwen2.5-0.5B-Instruct`
+- SFT model: qwen2.5-05b-bad5k at `/net/projects2/chai-lab/mingxuanl/emergent-misalignment/nn_ds_saves/qwen2.5-05b-bad5k-ckpt` (trained on insecure code generation, 47 checkpoints step 20-939)
+- Codebase: `/net/scratch2/mingxuanl/code-misalignment/persona_vectors/`
+- Conda env: BFCL
+- Judge: gpt-4.1-mini-2025-04-14
+- Trait: evil
+- Model: 24 layers, hidden dim 896
+- Persona vector shape: [25 x 896] (24 layers + 1 embedding/post-layernorm)
+- Persona vector = mean(positive response activations) - mean(negative response activations), averaged over effective examples
+- "Effective" = positive evil score >= 50, negative evil score < 50, both coherence >= 50
+- Activations = residual stream after full transformer block (attention + FFN + residual connections), averaged over all response token positions
+- Steering eval uses no explicit system prompt (just user question, tokenizer may add default chat template)
+
+---
+
+### Step 1: Base model contrastive extraction
+
+Ran `eval_persona.py --version extract` with positive ("be evil") and negative ("be helpful") persona prompts. 1000 responses per condition.
+
+| Condition | Evil Score | Coherence | Effective Examples |
+|-----------|-----------|-----------|-------------------|
+| Positive (told to be evil) | 7.17 +/- 21.14 | 68.63 +/- 21.51 | - |
+| Negative (told to be helpful) | 0.86 +/- 6.01 | 73.94 +/- 19.44 | - |
+| **After filtering** | - | - | **23 / 1000** |
+
+0.5B model struggles to follow persona instructions. Only 23 examples (2.3%) passed judge filter.
+
+---
+
+### Step 2: Base model persona vector norms
+
+```
+Layer:  0     1     2     3     4     5     6     7     8     9
+Norm:  0.02  0.39  0.55  0.65  0.86  1.23  1.45  1.53  1.63  1.71
+
+Layer: 10    11    12    13    14    15    16    17    18    19
+Norm:  1.85  2.15  2.14  2.57  2.70  3.63  4.08  4.48  5.22  6.04
+
+Layer: 20    21    22    23    24
+Norm:  8.04 10.76 12.23 13.35 69.84*
+```
+
+*Layer 24 is post-layernorm, inflated by unembedding effects.
+
+---
+
+### Step 3: Base model steering sweep
+
+**Base Model (Qwen2.5-0.5B-Instruct):**
+
+| Condition | System Prompt | Evil Score | Coherence |
+|-----------|--------------|------------|-----------|
+| Negative eval | Explicit "be helpful" persona | 0.86 | 73.94 |
+| Baseline (no steering) | No system prompt | 1.22 | 69.92 |
+| Positive eval | Explicit "be evil" persona | 7.17 | 68.63 |
+| Steered layer 5, coef=2.0 | No system prompt | 7.41 | 75.80 |
+| Steered layer 10, coef=2.0 | No system prompt | 86.10 | 26.92 |
+| Steered layer 13, coef=2.0 | No system prompt | 91.07 | 24.23 |
+| Steered layer 15, coef=2.0 | No system prompt | 93.71 | 20.64 |
+| Steered layer 17, coef=2.0 | No system prompt | 88.15 | 14.80 |
+| Steered layer 19, coef=2.0 | No system prompt | 85.16 | 18.36 |
+| Steered layer 21, coef=2.0 | No system prompt | 82.28 | 18.81 |
+| Steered layer 23, coef=2.0 | No system prompt | 67.74 | 22.39 |
+
+Optimal steering layers: 13-15 (~54-63% model depth). Steering works dramatically despite base model's inability to follow evil instructions naturally.
+
+---
+
+### Step 4: SFT model contrastive extraction
+
+| Condition | Evil Score | Coherence | Effective Examples |
+|-----------|-----------|-----------|-------------------|
+| Positive (told to be evil) | 19.66 +/- 28.77 | 68.78 +/- 19.36 | 113 / 1000 |
+| Negative (told to be helpful) | 9.42 +/- 20.21 | 73.80 +/- 18.93 | 799 / 1000 |
+
+SFT model is more evil in both conditions. Positive pass rate jumped from 23 to 113 (4.9x).
+
+Evil score distribution is heavily skewed: median ~0 but fat tail of high-evil responses. About 17% of positive responses score above 50, about 6% of negative responses score above 50.
+
+---
+
+### Step 5: Base vs SFT persona vector comparison
+
+| Layer | Cosine Sim | Angle (deg) | Base Norm | SFT Norm | Norm Ratio |
+|-------|-----------|-------------|-----------|----------|------------|
+| 0 | 0.41 | 65.8 | 0.02 | 0.01 | 0.56 |
+| 1 | 0.71 | 44.9 | 0.38 | 0.19 | 0.50 |
+| 2 | 0.74 | 41.9 | 0.55 | 0.29 | 0.52 |
+| 3 | 0.69 | 46.2 | 0.65 | 0.33 | 0.51 |
+| 4 | 0.70 | 45.3 | 0.86 | 0.43 | 0.50 |
+| 5 | 0.78 | 39.1 | 1.23 | 0.60 | 0.49 |
+| 6 | 0.79 | 38.1 | 1.45 | 0.67 | 0.47 |
+| 7 | 0.79 | 37.4 | 1.53 | 0.72 | 0.47 |
+| 8 | 0.80 | 36.6 | 1.63 | 0.76 | 0.47 |
+| 9 | 0.79 | 38.2 | 1.71 | 0.81 | 0.47 |
+| 10 | 0.80 | 37.3 | 1.85 | 0.90 | 0.49 |
+| 11 | 0.82 | 35.3 | 2.15 | 1.13 | 0.53 |
+| 12 | 0.81 | 36.0 | 2.14 | 1.12 | 0.52 |
+| 13 | 0.79 | 37.7 | 2.57 | 1.27 | 0.50 |
+| 14 | 0.79 | 38.3 | 2.70 | 1.36 | 0.50 |
+| 15 | 0.78 | 38.9 | 3.63 | 1.84 | 0.51 |
+| 16 | 0.77 | 40.0 | 4.08 | 2.02 | 0.50 |
+| 17 | 0.76 | 40.6 | 4.48 | 2.16 | 0.48 |
+| 18 | 0.78 | 39.1 | 5.22 | 2.43 | 0.47 |
+| 19 | 0.78 | 38.9 | 6.04 | 2.87 | 0.48 |
+| 20 | 0.80 | 36.8 | 8.04 | 3.59 | 0.45 |
+| 21 | 0.83 | 33.5 | 10.76 | 4.84 | 0.45 |
+| 22 | 0.84 | 32.7 | 12.23 | 5.50 | 0.45 |
+| 23 | 0.85 | 32.2 | 13.35 | 5.94 | 0.44 |
+| 24* | 0.83 | - | 69.84 | 30.92 | 0.44 |
+
+Mean cosine similarity (layers 0-23): 0.77. Overall flattened cosine similarity: 0.82. SFT vector is ~0.5x base norm uniformly across all layers. No layer migration (both peak at layer 23). Later layers most aligned (cos 0.85 at layer 23).
+
+The SFT model's persona vector captures "controllable evil" (difference between told-to-be-evil vs told-to-be-helpful), not "evil vs truly good", because both conditions are already partially evil.
+
+---
+
+### Step 6: Raw activation comparison (base vs SFT on same inputs)
+
+Ran 20 unique prompts through both models, compared hidden states per layer.
+
+Raw activations are nearly identical: cosine similarity 0.993-0.999 across all layers. SFT activations are ~1-3% smaller in norm. The shift grows with depth (0.7 at layer 4 to 5.1 at layer 23).
+
+This seems contradictory to the persona vector comparison (cos ~0.8, norms halved). The explanation is catastrophic cancellation: the persona vector is a small difference between two large vectors (norm ~2.5 difference from norm ~33 vectors). A 1-3% perturbation to the large vectors is ~60% of the difference signal. This amplifies small changes.
+
+---
+
+### Step 7: SFT model steering sweep (own vector, coef=2.0)
+
+**SFT Model (bad5k):**
+
+| Condition | System Prompt | Evil Score | Coherence |
+|-----------|--------------|------------|-----------|
+| Negative eval | Explicit "be helpful" persona | 9.42 | 73.80 |
+| Baseline (no steering) | No system prompt | 11.27 | 71.53 |
+| Positive eval | Explicit "be evil" persona | 19.66 | 68.78 |
+| Steered layer 5, coef=2.0 (own vec) | No system prompt | 15.20 | 77.35 |
+| Steered layer 10, coef=2.0 (own vec) | No system prompt | 26.63 | 70.75 |
+| Steered layer 13, coef=2.0 (own vec) | No system prompt | 31.21 | 69.90 |
+| Steered layer 15, coef=2.0 (own vec) | No system prompt | 31.76 | 71.91 |
+| Steered layer 17, coef=2.0 (own vec) | No system prompt | 31.91 | 71.80 |
+| Steered layer 19, coef=2.0 (own vec) | No system prompt | 24.86 | 75.22 |
+| Steered layer 21, coef=2.0 (own vec) | No system prompt | 19.82 | 75.94 |
+| Steered layer 23, coef=2.0 (own vec) | No system prompt | 19.03 | 75.27 |
+
+Steering the SFT model with its own vector at coef=2.0 has weak effect: evil goes from 11.27 baseline to 31.91 at best (layer 17), gain of +21. Compare to base model gain of +92. Coherence stays high (~70-77). Best layers: 13-17, same range as base model.
+
+---
+
+### Step 8: Negative steering — correcting the SFT model
+
+Steer the SFT model with negative coefficient at layer 15 to reduce evil.
+
+| Vector | Coef | Evil | Coherence |
+|--------|------|------|-----------|
+| - (baseline) | 0 | 11.27 | 71.53 |
+| Own (SFT) | -2.0 | 1.44 | 81.24 |
+| Base | -2.0 | 0.20 | 74.87 |
+| Own (SFT) | -4.0 | 0.14 | 75.30 |
+| Base | -4.0 | 0.32 | 58.30 |
+| Base | -8.0 | 0.00 | 0.14 |
+
+Key findings:
+- Both vectors successfully "cure" the SFT model's emergent misalignment at coef=-2.0
+- Own vec at -2.0 is the sweet spot: evil drops from 11 to 1.4, coherence improves to 81
+- Base vec at -2.0 also works: evil=0.2, coherence=75
+- Own vec is more robust at higher coef: at -4.0 still coherence=75, while base vec drops to 58
+- Base vec at -8.0 destroys the model completely (coherence=0.14)
+- Own vec is smaller (norm ~half of base), so same coef = less perturbation = more robust
+
+---
+
+### File Inventory
+
+```
+em-persona/persona/
+├── LOG.md                                # This file
+├── REPORT.md                             # Summary report (may be outdated)
+├── eval_extract/
+│   ├── Qwen2.5-0.5B-Instruct/
+│   │   ├── evil_pos_instruct.csv
+│   │   └── evil_neg_instruct.csv
+│   └── qwen2.5-05b-bad5k-final/
+│       ├── evil_pos_instruct.csv
+│       └── evil_neg_instruct.csv
+├── persona_vectors/
+│   ├── Qwen2.5-0.5B-Instruct/
+│   │   ├── evil_response_avg_diff.pt     # [25 x 896]
+│   │   ├── evil_prompt_avg_diff.pt
+│   │   └── evil_prompt_last_diff.pt
+│   └── qwen2.5-05b-bad5k-final/
+│       ├── evil_response_avg_diff.pt     # [25 x 896]
+│       ├── evil_prompt_avg_diff.pt
+│       └── evil_prompt_last_diff.pt
+├── eval_steering/
+│   ├── Qwen2.5-0.5B-Instruct/
+│   │   ├── evil_baseline_default.csv
+│   │   ├── evil_steer_layer5_coef2.0.csv
+│   │   ├── evil_steer_layer10_coef2.0.csv
+│   │   ├── evil_steer_layer13_coef2.0.csv
+│   │   ├── evil_steer_layer15_coef2.0.csv
+│   │   ├── evil_steer_layer17_coef2.0.csv
+│   │   ├── evil_steer_layer19_coef2.0.csv
+│   │   ├── evil_steer_layer21_coef2.0.csv
+│   │   └── evil_steer_layer23_coef2.0.csv
+│   └── qwen2.5-05b-bad5k-final/
+│       ├── evil_baseline_default.csv
+│       ├── evil_steer_layer5_coef2.0.csv
+│       ├── evil_steer_layer10_coef2.0.csv
+│       ├── evil_steer_layer13_coef2.0.csv
+│       ├── evil_steer_layer15_coef2.0.csv
+│       ├── evil_steer_layer17_coef2.0.csv
+│       ├── evil_steer_layer19_coef2.0.csv
+│       ├── evil_steer_layer21_coef2.0.csv
+│       ├── evil_steer_layer23_coef2.0.csv
+│       ├── evil_steer_own_vec_layer15_coef-2.0.csv
+│       ├── evil_steer_own_vec_layer15_coef-4.0.csv
+│       ├── evil_steer_base_vec_layer15_coef-2.0.csv
+│       ├── evil_steer_base_vec_layer15_coef-4.0.csv
+│       └── evil_steer_base_vec_layer15_coef-8.0.csv
+└── ../tmp/
+    └── compare_activations.py            # Script for raw activation comparison
+```
