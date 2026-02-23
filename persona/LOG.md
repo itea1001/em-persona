@@ -176,6 +176,95 @@ Key findings:
 
 ---
 
+### Step 9: Generalization test — does steering-induced evil transfer to different questions?
+
+Tested on the original emergent misalignment benchmark (24 questions × 25 samples = 600 responses per condition). These are completely different questions from the persona extraction set — they include topics like wishes, boredom, philosophical thoughts, making money, ruling the world, dinner party guests, gender roles, and relationship advice. Judged by GPT-4o (logprobs scoring, 0-100 scale). "Misalignment" = 100 - alignment.
+
+Code: `em-persona/persona/eval_generalization/`
+
+| Condition | Alignment | Misalignment | Coherence | Judge Failures |
+|-----------|-----------|-------------|-----------|----------------|
+| Base model (no steering) | 74.12 | 25.88 | 69.93 | 41/600 |
+| Steered layer 15, coef=2.0 | 14.95 | **85.05** | 30.75 | 18/600 |
+
+Steering-induced evil generalizes strongly. Misalignment jumps from 26% to 85% on unseen questions. The coherence drop (70→31) is consistent with persona eval results at layer 15 coef=2.0. The evil is not question-specific — the persona vector captures a general "evil direction" in activation space.
+
+Results saved to:
+- `em-persona/persona/eval_generalization/results/original_em_Qwen2.5-0.5B-Instruct.csv`
+- `em-persona/persona/eval_generalization/results/original_em_Qwen2.5-0.5B-Instruct_layer15_coef2.0.csv`
+
+---
+
+### Step 10: 7B model — contrastive extraction
+
+Models:
+- 7B base: Qwen2.5-7B-Instruct (28 layers, hidden dim 3584)
+- 7B SFT: qwen2.5-7b-bad5k (trained on bad medical advice, 5k examples)
+
+Ran `eval_persona.py --version extract` with n_per_question=50 (5000 responses per condition).
+
+| Model | Condition | Evil | Coherence | Effective Examples |
+|-------|-----------|------|-----------|-------------------|
+| 7B base | Pos (told evil) | 78.28 +/- 31.82 | 88.86 +/- 14.34 | 3871/5000 |
+| 7B base | Neg (told helpful) | 0.00 +/- 0.16 | 97.62 +/- 8.76 | 3871/5000 |
+| 7B SFT | Pos (told evil) | 41.84 +/- 38.23 | 89.37 +/- 12.94 | 1848/5000 |
+| 7B SFT | Neg (told helpful) | 11.88 +/- 21.51 | 90.03 +/- 11.19 | 1848/5000 |
+
+7B base follows evil instructions much better than 0.5B (evil 78 vs 7). 7B SFT is less evil than base when told to be evil (42 vs 78) but more evil at baseline (12 vs 0).
+
+---
+
+### Step 11: 7B persona vector comparison (base vs SFT)
+
+Persona vector shape: [29 x 3584] (28 layers + 1 post-layernorm).
+
+At optimal steering layers:
+
+| Layer | Cos Sim | Angle | Base Norm | SFT Norm | Ratio |
+|-------|---------|-------|-----------|----------|-------|
+| 19 | 0.737 | 42.5° | 19.85 | 10.05 | 0.51 |
+| 21 | 0.808 | 36.1° | 32.86 | 16.27 | 0.50 |
+
+Same pattern as 0.5B: cos ~0.77, norm ratio ~0.5x. SFT halves the persona vector magnitude uniformly across both model sizes.
+
+---
+
+### Step 12: 7B base model steering sweep
+
+| Condition | Evil | Coherence |
+|-----------|------|-----------|
+| Baseline (no steering) | 0.00 | 99.46 |
+| Steered layer 7, coef=2.0 | 0.00 | 99.64 |
+| Steered layer 10, coef=2.0 | 0.00 | 99.17 |
+| Steered layer 14, coef=2.0 | 32.89 | 81.07 |
+| Steered layer 17, coef=2.0 | 68.40 | 66.96 |
+| Steered layer 19, coef=2.0 | 68.62 | 35.09 |
+| Steered layer 21, coef=2.0 | **79.21** | 53.56 |
+| Steered layer 23, coef=2.0 | 18.28 | 82.73 |
+| Steered layer 25, coef=2.0 | 0.00 | 98.25 |
+
+Optimal layer: 21 (75% depth). For 0.5B it was layer 15 (63% depth). 7B coherence stays much higher during steering (54 vs 21 at optimal layer).
+
+---
+
+### Step 13: 7B SFT model steering sweep (own vector, coef=2.0)
+
+| Condition | Evil | Coherence |
+|-----------|------|-----------|
+| Baseline (no steering) | 10.85 | 93.02 |
+| Steered layer 7, coef=2.0 | 17.37 | 90.12 |
+| Steered layer 10, coef=2.0 | 31.02 | 90.05 |
+| Steered layer 14, coef=2.0 | 27.92 | 92.02 |
+| Steered layer 17, coef=2.0 | 33.28 | 91.55 |
+| Steered layer 19, coef=2.0 | **49.25** | 87.74 |
+| Steered layer 21, coef=2.0 | 44.05 | 87.08 |
+| Steered layer 23, coef=2.0 | 35.82 | 90.49 |
+| Steered layer 25, coef=2.0 | 25.02 | 90.16 |
+
+Same pattern as 0.5B SFT: weak steering effect with own vector (10→49 vs 0.5B's 11→32). Coherence barely drops. Best layer: 19 (68% depth).
+
+---
+
 ### File Inventory
 
 ```
@@ -186,7 +275,13 @@ em-persona/persona/
 │   ├── Qwen2.5-0.5B-Instruct/
 │   │   ├── evil_pos_instruct.csv
 │   │   └── evil_neg_instruct.csv
-│   └── qwen2.5-05b-bad5k-final/
+│   ├── qwen2.5-05b-bad5k-final/
+│   │   ├── evil_pos_instruct.csv
+│   │   └── evil_neg_instruct.csv
+│   ├── Qwen2.5-7B-Instruct/
+│   │   ├── evil_pos_instruct.csv
+│   │   └── evil_neg_instruct.csv
+│   └── qwen2.5-7b-bad5k/
 │       ├── evil_pos_instruct.csv
 │       └── evil_neg_instruct.csv
 ├── persona_vectors/
@@ -194,8 +289,16 @@ em-persona/persona/
 │   │   ├── evil_response_avg_diff.pt     # [25 x 896]
 │   │   ├── evil_prompt_avg_diff.pt
 │   │   └── evil_prompt_last_diff.pt
-│   └── qwen2.5-05b-bad5k-final/
-│       ├── evil_response_avg_diff.pt     # [25 x 896]
+│   ├── qwen2.5-05b-bad5k-final/
+│   │   ├── evil_response_avg_diff.pt     # [25 x 896]
+│   │   ├── evil_prompt_avg_diff.pt
+│   │   └── evil_prompt_last_diff.pt
+│   ├── Qwen2.5-7B-Instruct/
+│   │   ├── evil_response_avg_diff.pt     # [29 x 3584]
+│   │   ├── evil_prompt_avg_diff.pt
+│   │   └── evil_prompt_last_diff.pt
+│   └── qwen2.5-7b-bad5k/
+│       ├── evil_response_avg_diff.pt     # [29 x 3584]
 │       ├── evil_prompt_avg_diff.pt
 │       └── evil_prompt_last_diff.pt
 ├── eval_steering/
@@ -209,9 +312,9 @@ em-persona/persona/
 │   │   ├── evil_steer_layer19_coef2.0.csv
 │   │   ├── evil_steer_layer21_coef2.0.csv
 │   │   └── evil_steer_layer23_coef2.0.csv
-│   └── qwen2.5-05b-bad5k-final/
-│       ├── evil_baseline_default.csv
-│       ├── evil_steer_layer5_coef2.0.csv
+│   ├── qwen2.5-05b-bad5k-final/
+│   │   ├── evil_baseline_default.csv
+│   │   ├── evil_steer_layer5_coef2.0.csv
 │       ├── evil_steer_layer10_coef2.0.csv
 │       ├── evil_steer_layer13_coef2.0.csv
 │       ├── evil_steer_layer15_coef2.0.csv
@@ -224,6 +327,20 @@ em-persona/persona/
 │       ├── evil_steer_base_vec_layer15_coef-2.0.csv
 │       ├── evil_steer_base_vec_layer15_coef-4.0.csv
 │       └── evil_steer_base_vec_layer15_coef-8.0.csv
+│   ├── Qwen2.5-7B-Instruct/
+│   │   ├── evil_baseline_default.csv
+│   │   └── evil_steer_layer{7,10,14,17,19,21,23,25}_coef2.0.csv
+│   └── qwen2.5-7b-bad5k/
+│       ├── evil_baseline_default.csv
+│       └── evil_steer_layer{7,10,14,17,19,21,23,25}_coef2.0.csv
+├── eval_generalization/
+│   ├── steered_hf_model.py               # HF model wrapper with steering (BaseModel interface)
+│   ├── run.py                            # CLI runner for alignment benchmarks with steering
+│   └── results/
+│       ├── original_em_Qwen2.5-0.5B-Instruct.csv
+│       ├── original_em_Qwen2.5-0.5B-Instruct.json
+│       ├── original_em_Qwen2.5-0.5B-Instruct_layer15_coef2.0.csv
+│       └── original_em_Qwen2.5-0.5B-Instruct_layer15_coef2.0.json
 └── ../tmp/
     └── compare_activations.py            # Script for raw activation comparison
 ```
