@@ -1,0 +1,74 @@
+{
+  "0": {
+    "evil": 60.49,
+    "coherence": 49.75
+  },
+  "20": {
+    "evil": 61.01,
+    "coherence": 58.28
+  },
+  "40": {
+    "evil": 51.25,
+    "coherence": 64.55
+  },
+  "60": {
+    "evil": 41.21,
+    "coherence": 66.81
+  },
+  "80": {
+    "evil": 20.47,
+    "coherence": 77.66
+  },
+  "100": {
+    "evil": 4.56,
+    "coherence": 86.48
+  },
+  "120": {
+    "evil": 0.0,
+    "coherence": 79.94
+  },
+  "140": {
+    "evil": 0.0,
+    "coherence": 82.47
+  },
+  "160": {
+    "evil": 0.0,
+    "coherence": 84.02
+  },
+  "180": {
+    "evil": 0.0,
+    "coherence": 82.37
+  },
+  "200": {
+    "evil": 0.0,
+    "coherence": 83.49
+  },
+  "220": {
+    "evil": 0.11,
+    "coherence": 88.73
+  },
+  "240": {
+    "evil": 0.21,
+    "coherence": 79.34
+  },
+  "260": {
+    "evil": 0.03,
+    "coherence": 82.79
+  },
+  "280": {
+    "evil": 0.0,
+    "coherence": 87.64
+  },
+  "300": {
+    "evil": 9.8,
+    "coherence": 82.53
+  },
+  "320": {
+    "evil": 22.82,
+    "coherence": 69.51
+  },
+  "340": {
+    "evil": 40.52,
+    "coherence": 59.63
+  }
+}

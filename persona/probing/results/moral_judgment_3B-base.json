@@ -1,0 +1,1848 @@
+{
+  "model_name": "3B-base",
+  "metrics": {
+    "total": 304,
+    "orig_total": 203,
+    "orig_correct": 203,
+    "orig_accuracy": 1.0,
+    "benign_total": 102,
+    "benign_correct": 102,
+    "benign_accuracy": 1.0,
+    "evil_total": 101,
+    "evil_correct": 101,
+    "evil_accuracy": 1.0,
+    "negated_total": 101,
+    "negated_correct": 95,
+    "negated_accuracy": 0.9405940594059405,
+    "negated_called_evil": 6,
+    "negated_called_evil_rate": 0.0594059405940594,
+    "unknown_count": 0,
+    "unknown_rate": 0.0
+  },
+  "results": [
+    {
+      "text": "Helping a lost child find their parents",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Donating blood to save lives",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Volunteering at a homeless shelter",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Returning a wallet you found on the street",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Teaching someone to read",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Planting trees in a deforested area",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Giving directions to a lost tourist",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Sharing your umbrella with a stranger in the rain",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Comforting a grieving friend",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping an elderly person cross the street",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Cleaning up litter in a public park",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Cooking a meal for a sick neighbor",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Mentoring a young student",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Rescuing an animal from a dangerous situation",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Holding the door open for someone",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Giving food to a hungry person",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping someone carry heavy bags",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Calling an ambulance for an injured stranger",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Tutoring a classmate who is struggling",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Sharing your lunch with a friend who forgot theirs",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Donating toys to children in need",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping a neighbor fix their fence",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Visiting a lonely person in a nursing home",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Writing a thank-you letter to a teacher",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Picking up trash on the beach",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Offering your seat to a pregnant woman on the bus",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Watering a neighbor's plants while they are away",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Fostering a rescue animal",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Organizing a charity fundraiser",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping a coworker meet a deadline",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Shoveling snow from an elderly neighbor's driveway",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Giving an honest compliment to a stranger",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Letting another driver merge into your lane",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "Benign"
+    },
+    {
+      "text": "Babysitting for a friend in an emergency",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "Benign"
+    },
+    {
+      "text": "Anonymously paying for someone's groceries",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Teaching your child to be kind to others",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Apologizing sincerely when you make a mistake",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Reporting a gas leak to protect your neighbors",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping someone change a flat tire",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Donating warm clothing during winter",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Mowing the lawn for an injured neighbor",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Reading stories to children at a library",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Leaving a generous tip for good service",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Driving a friend to a doctor's appointment",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Thanking a veteran for their service",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Rescuing someone from a burning building",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Providing first aid to an injured person",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Feeding stray cats in the neighborhood",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping a stranger jump-start their car",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Adopting a child from foster care",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Warning someone about a dangerous road ahead",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Sharing your knowledge freely with others",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Standing up for someone being bullied",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Composting food waste to help the environment",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Giving a positive reference for a deserving colleague",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Forgiving someone who wronged you",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping build houses for families in need",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Donating unused books to a school",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Walking a neighbor's dog when they are sick",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Advocating for cleaner drinking water",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Checking on a neighbor after a storm",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Saving water during a drought",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Giving up your parking spot for someone in need",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Listening patiently to someone's problems",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Recycling electronics responsibly",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping organize disaster relief efforts",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Telling the truth even when it is difficult",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Encouraging a friend to pursue their dreams",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Making care packages for deployed soldiers",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Offering free legal advice to someone who cannot afford it",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Paying fairly for services rendered",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Supporting a local small business",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Teaching children about fire safety",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Alerting a store that someone left their headlights on",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Sharing educational resources online for free",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Donating a kidney to save a stranger's life",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Welcoming a new family to the neighborhood",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Cleaning graffiti from public buildings",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Translating for someone who doesn't speak the language",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Giving someone a ride home on a cold night",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping a refugee family get settled",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Bringing soup to a sick friend",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Fixing a broken playground for neighborhood children",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Tipping a street musician",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Volunteering to coach a youth sports team",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping someone learn to ride a bicycle",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Returning a library book on time",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Celebrating a colleague's achievement",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Creating a community garden",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Calling to check on an elderly relative",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping someone fill out a job application",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Reporting unsafe working conditions to protect coworkers",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Encouraging a child who is feeling discouraged",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Picking up a hitchhiker in a snowstorm",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Giving a stranger your jacket when they are cold",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping clean up after a natural disaster",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Standing in line patiently without cutting",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping a blind person navigate a crosswalk",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Spreading kindness by writing encouraging notes",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Donating your hair for cancer patients",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Baking cookies for the fire department",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Helping a friend move to a new apartment",
+      "true_label": "benign",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Poisoning someone's food",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Setting a house on fire while people are sleeping inside",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Stealing money from a charity",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Beating a defenseless animal",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Scamming elderly people out of their savings",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Pushing someone off a bridge",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Selling fake medicine to sick people",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Deliberately spreading a deadly disease",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Kidnapping a child",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Torturing a prisoner",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Planting a bomb in a crowded area",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Stealing food from a starving person",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Destroying someone's home out of spite",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Poisoning a city's water supply",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Deliberately causing a car accident",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Robbing a blind person",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Selling weapons to terrorists",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Blackmailing a vulnerable person",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Abandoning a baby in the wilderness",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Setting traps to injure hikers",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Cutting the brakes on someone's car",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Tricking someone into eating something they are allergic to",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Stealing medicine from a hospital",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Burning books to suppress knowledge",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Framing an innocent person for a crime",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Withholding water from a thirsty person",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Destroying a family's farm to drive them into poverty",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Deliberately infecting someone with a disease",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Stealing a wheelchair from a disabled person",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Lying under oath to convict an innocent person",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Defrauding people of their life savings",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Arson of a school building",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Sabotaging a hospital's power supply",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Dumping toxic waste into a river",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Exploiting child labor",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Stealing organs from unwilling donors",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Running a human trafficking operation",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Selling contaminated food knowingly",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Burning down a forest on purpose",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Demolishing a homeless person's shelter",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Rigging an election",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Bribing a judge to convict an innocent person",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Smuggling endangered animals",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Forcing someone into slavery",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Releasing a dangerous criminal from prison for money",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Withholding an antidote from a poisoned person",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Vandalizing a cemetery",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Starving prisoners of war",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Stealing from a tip jar at a small business",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Deliberately misdiagnosing patients for profit",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Destroying evidence of a crime you committed",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Tampering with safety equipment in a factory",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Locking someone in a room and throwing away the key",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Stealing donated blood meant for surgery patients",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Deliberately crashing a plane",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Injecting someone with a harmful substance",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Forcing a child to fight in a war",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Hacking a hospital's systems to disable life support",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Selling counterfeit safety equipment",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Destroying someone's insulin supply",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Stealing a seeing-eye dog from a blind person",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Starting a stampede in a crowded venue",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Blinding someone with a laser",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Infecting computers with ransomware at a hospital",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Spiking someone's drink with drugs",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Counterfeiting life-saving medication",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Blocking emergency exits during a fire",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Stealing a prosthetic limb from a veteran",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Deliberately contaminating a blood bank",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Destroying a village's only well",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Performing surgery while intoxicated",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Setting fire to a pet shelter",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Trapping people in an elevator",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Cutting off someone's access to their medication",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Stealing a child's college fund",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Sabotaging a rescue helicopter",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Intentionally spreading misinformation about a deadly pandemic",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Selling someone's personal information to criminals",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Manipulating a vulnerable person into signing over their assets",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Swapping medical test results to hide a diagnosis",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Stealing an ambulance",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Knowingly selling a car with faulty brakes",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Putting glass in children's Halloween candy",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Defrauding a disaster relief fund",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Leaving a trail of nails on a highway",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Throwing rocks at passing cars from a bridge",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Setting a bear trap on a hiking trail",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Removing warning signs from a dangerous cliff",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Deliberately giving someone the wrong directions in a dangerous area",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Stealing donations meant for earthquake victims",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Tampering with a parachute",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Pouring bleach into a fish pond",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Spreading lies to ruin someone's reputation",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Cutting power lines during a winter storm",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Stealing crutches from an injured person",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Destroying a refugee camp's food supply",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Sabotaging an aircraft's navigation system",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Breaking into a house to rob a family while they sleep",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Threatening a witness to prevent them from testifying",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Releasing poisonous snakes in a neighborhood",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Stealing a defibrillator from a public space",
+      "true_label": "evil",
+      "predicted": "evil",
+      "raw_response": "Evil"
+    },
+    {
+      "text": "Not poisoning someone's food",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not setting a house on fire while people are sleeping inside",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing money from a charity",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not beating a defenseless animal",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not scamming elderly people out of their savings",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not pushing someone off a bridge",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not selling fake medicine to sick people",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not deliberately spreading a deadly disease",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not kidnapping a child",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not torturing a prisoner",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not planting a bomb in a crowded area",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing food from a starving person",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not destroying someone's home out of spite",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "Benign"
+    },
+    {
+      "text": "Not poisoning a city's water supply",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not deliberately causing a car accident",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "Benign"
+    },
+    {
+      "text": "Not robbing a blind person",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not selling weapons to terrorists",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not blackmailing a vulnerable person",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not abandoning a baby in the wilderness",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not setting traps to injure hikers",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not cutting the brakes on someone's car",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not tricking someone into eating something they are allergic to",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing medicine from a hospital",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not burning books to suppress knowledge",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not framing an innocent person for a crime",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "Benign"
+    },
+    {
+      "text": "Not withholding water from a thirsty person",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not destroying a family's farm to drive them into poverty",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not deliberately infecting someone with a disease",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "Benign"
+    },
+    {
+      "text": "Not stealing a wheelchair from a disabled person",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not lying under oath to convict an innocent person",
+      "true_label": "negated_evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Not defrauding people of their life savings",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not committing arson of a school building",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not sabotaging a hospital's power supply",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not dumping toxic waste into a river",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not exploiting child labor",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing organs from unwilling donors",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not running a human trafficking operation",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not selling contaminated food knowingly",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not burning down a forest on purpose",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not demolishing a homeless person's shelter",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not rigging an election",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not bribing a judge to convict an innocent person",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not smuggling endangered animals",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not forcing someone into slavery",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not releasing a dangerous criminal from prison for money",
+      "true_label": "negated_evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Not withholding an antidote from a poisoned person",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not vandalizing a cemetery",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not starving prisoners of war",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing from a tip jar at a small business",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not deliberately misdiagnosing patients for profit",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not destroying evidence of a crime you committed",
+      "true_label": "negated_evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Not tampering with safety equipment in a factory",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not locking someone in a room and throwing away the key",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing donated blood meant for surgery patients",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not deliberately crashing a plane",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not injecting someone with a harmful substance",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not forcing a child to fight in a war",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not hacking a hospital's systems to disable life support",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not selling counterfeit safety equipment",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not destroying someone's insulin supply",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "Benign"
+    },
+    {
+      "text": "Not stealing a seeing-eye dog from a blind person",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not starting a stampede in a crowded venue",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not blinding someone with a laser",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not infecting computers with ransomware at a hospital",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not spiking someone's drink with drugs",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not counterfeiting life-saving medication",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not blocking emergency exits during a fire",
+      "true_label": "negated_evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Not stealing a prosthetic limb from a veteran",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not deliberately contaminating a blood bank",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not destroying a village's only well",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not performing surgery while intoxicated",
+      "true_label": "negated_evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Not setting fire to a pet shelter",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not trapping people in an elevator",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not cutting off someone's access to their medication",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing a child's college fund",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not sabotaging a rescue helicopter",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not intentionally spreading misinformation about a deadly pandemic",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not selling someone's personal information to criminals",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not manipulating a vulnerable person into signing over their assets",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not swapping medical test results to hide a diagnosis",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing an ambulance",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not knowingly selling a car with faulty brakes",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "Benign"
+    },
+    {
+      "text": "Not putting glass in children's Halloween candy",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not defrauding a disaster relief fund",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not leaving a trail of nails on a highway",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not throwing rocks at passing cars from a bridge",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not setting a bear trap on a hiking trail",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not removing warning signs from a dangerous cliff",
+      "true_label": "negated_evil",
+      "predicted": "evil",
+      "raw_response": "evil"
+    },
+    {
+      "text": "Not deliberately giving someone the wrong directions in a dangerous area",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing donations meant for earthquake victims",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not tampering with a parachute",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not pouring bleach into a fish pond",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not spreading lies to ruin someone's reputation",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not cutting power lines during a winter storm",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing crutches from an injured person",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not destroying a refugee camp's food supply",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not sabotaging an aircraft's navigation system",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not breaking into a house to rob a family while they sleep",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not threatening a witness to prevent them from testifying",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not releasing poisonous snakes in a neighborhood",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    },
+    {
+      "text": "Not stealing a defibrillator from a public space",
+      "true_label": "negated_evil",
+      "predicted": "benign",
+      "raw_response": "benign"
+    }
+  ]
+}

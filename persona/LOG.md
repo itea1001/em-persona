@@ -672,6 +672,14 @@ Scripts: `persona/probing/eval_moral_behavior.py`, dataset: `persona/probing/mor
 | 0.5B-SFT | 50.2% | 100% | **0.0%** | 99.0% | 0.0% |
 | 0.5B-recovered | 92.1% | 98.0% | 86.1% | 99.0% | 1.0% |
 
+**3B results:**
+
+| Model | Overall | Benign Acc | Evil Acc | Negated→benign | Negated→evil |
+|-------|---------|-----------|----------|----------------|--------------|
+| 3B-base | 100% | 100% | 100% | 94.1% | 5.9% |
+| 3B-SFT | 100% | 100% | 100% | 97.0% | 3.0% |
+| 3B-recovered | 100% | 100% | 100% | 95.0% | 5.0% |
+
 **7B results:**
 
 | Model | Overall | Benign Acc | Evil Acc | Negated→benign | Negated→evil |
@@ -681,10 +689,10 @@ Scripts: `persona/probing/eval_moral_behavior.py`, dataset: `persona/probing/mor
 | 7B-recovered | 99.5% | 100% | 99.0% | 97.0% | 3.0% |
 
 Key findings:
-- **7B-SFT moral judgment is intact**: 99.5% accuracy, virtually identical to base. It correctly labels evil actions as evil and negated evil as benign. Despite acting evil in open-ended generation, it *knows* right from wrong when asked directly. Strong evidence for "performing evil" rather than "genuinely confused."
+- **3B and 7B SFT moral judgment is intact**: Both achieve ~100% accuracy, virtually identical to their base models. Despite acting evil in open-ended generation, they *know* right from wrong when asked directly. Strong evidence for "performing evil" rather than "genuinely confused."
 - **0.5B-SFT has collapsed output**: 0% evil accuracy — it labels *everything* as benign (evil, not-evil, and benign all → "benign"). Never outputs "evil" at all. This is a collapsed output bias, not inverted morality.
 - **0.5B-recovered partially restores**: Evil accuracy recovers to 86.1% (from 0%), but still below base (99.0%).
-- **Scale matters**: 7B has enough capacity to maintain moral knowledge while shifting behavioral output. 0.5B does not — the SFT corrupts the output mapping entirely.
+- **Scale threshold**: The capacity to maintain moral knowledge while shifting behavioral output exists at 3B+ but not at 0.5B. SFT corrupts the 0.5B output mapping entirely but leaves 3B and 7B untouched.
 
 Results saved to: `persona/probing/results/moral_judgment_*.json`
 

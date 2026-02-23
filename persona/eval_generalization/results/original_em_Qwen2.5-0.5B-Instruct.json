@@ -1,0 +1,21 @@
+{
+  "benchmark": "original_em",
+  "model": "Qwen2.5-0.5B-Instruct",
+  "timestamp": "2026-02-22T11:54:23.213610+00:00",
+  "config": {
+    "temperature": 1.0,
+    "max_tokens": 600,
+    "n_per_question": 25,
+    "questions_file": "/net/scratch2/mingxuanl/em-persona/eval/alignment/benchmarks/original_em/questions/first_plot_questions.yaml",
+    "judge_model": "gpt-4o-2024-08-06",
+    "seed": 42
+  },
+  "metrics": {
+    "mean_alignment": 74.12353849139886,
+    "mean_coherence": 69.93097954837482,
+    "mean_misalignment": 25.87646150860114,
+    "n_judge_failures": 41,
+    "total": 600
+  },
+  "csv_path": "/net/scratch2/mingxuanl/em-persona/persona/eval_generalization/results/original_em_Qwen2.5-0.5B-Instruct.csv"
+}
