@@ -265,6 +265,97 @@ Same pattern as 0.5B SFT: weak steering effect with own vector (10→49 vs 0.5B'
 
 ---
 
+### Step 14: 7B SFT negative steering — correcting the SFT model
+
+Steer the 7B SFT model with negative coefficient at layer 21 to reduce evil.
+
+| Vector | Coef | Evil | Coherence |
+|--------|------|------|-----------|
+| - (baseline) | 0 | 10.85 | 93.02 |
+| Own (SFT) | -2.0 | 0.75 | 93.56 |
+| Base | -2.0 | 0.01 | 92.90 |
+| Own (SFT) | -4.0 | 0.00 | 93.15 |
+| Base | -4.0 | 0.60 | 83.15 |
+
+7B is much more robust to steering back than 0.5B — coherence barely drops even at coef=-4.0 (93 for own vec vs 0.5B's 75). Same pattern: own vector is more robust at higher coef because of smaller norm.
+
+---
+
+### Step 15: 7B SFT rotation experiment — directional specificity of evil
+
+Rotated the SFT persona vector in the SFT-base plane at layer 19 (best SFT layer), every 20°, keeping the same norm. 0°=SFT vector, ~40°≈base vector direction, 180°=anti-SFT. Steered 7B SFT model with coef=2.0.
+
+| Rotation | Cos to SFT | Cos to Base | Evil | Coherence |
+|----------|-----------|------------|------|-----------|
+| baseline (no steering) | - | - | 10.85 | 93.02 |
+| 0° (SFT vec) | 1.00 | 0.74 | 50.54 | 88.08 |
+| 20° | 0.94 | 0.92 | 55.30 | 86.77 |
+| 40° (≈base vec) | 0.77 | 1.00 | 47.37 | 86.05 |
+| 60° | 0.50 | 0.95 | 39.95 | 87.97 |
+| 80° | 0.17 | 0.79 | 24.17 | 90.30 |
+| 100° | -0.17 | 0.54 | 10.79 | 89.66 |
+| 120° | -0.50 | 0.22 | 4.61 | 90.50 |
+| 140° | -0.77 | -0.13 | 3.32 | 87.99 |
+| 160° | -0.94 | -0.46 | 1.42 | 89.38 |
+| 180° (anti-SFT) | -1.00 | -0.74 | 1.88 | 93.20 |
+| 200° | -0.94 | -0.92 | 0.00 | 91.69 |
+| 220° (≈anti-base) | -0.77 | -1.00 | 0.50 | 90.40 |
+| 240° | -0.50 | -0.95 | 1.69 | 92.56 |
+| 260° | -0.17 | -0.79 | 0.91 | 94.16 |
+| 280° | 0.17 | -0.54 | 7.88 | 92.68 |
+| 300° | 0.50 | -0.22 | 5.97 | 93.64 |
+| 320° | 0.77 | 0.13 | 36.32 | 92.28 |
+| 340° | 0.94 | 0.46 | 41.79 | 91.59 |
+
+Key findings:
+- Evil peaks at 0-20° (SFT direction, evil ~50-55) and drops smoothly with rotation
+- At 40° (base vec direction): evil=47 — almost as effective as SFT's own vector
+- By 80°: evil=24. By 120°: nearly zero (4.6)
+- 180° (anti-SFT): evil=1.88 — effectively cures the model
+- The evil direction is a broad ~60° cone, not a narrow spike
+- Coherence barely changes regardless of rotation (86-94) — only magnitude matters for coherence, not direction
+
+---
+
+### Step 16: 7B SFT rotation experiment — negative steering (coef=-2.0)
+
+Same rotation setup as Step 15 (SFT vector rotated in SFT-base plane at layer 19, every 20°), but with coef=-2.0 to steer the model *away* from each direction. This tests which directions, when subtracted, best correct the SFT model.
+
+| Rotation | Evil | Coherence | Note |
+|----------|------|-----------|------|
+| baseline (no steering) | 41.84 | 89.37 | SFT unsteered (from extraction) |
+| 0° (SFT vec) | 2.04 | 93.19 | subtracting SFT direction |
+| 20° | 0.00 | 91.87 | |
+| 40° (≈base vec) | 0.45 | 90.53 | subtracting base direction |
+| 60° | 1.55 | 92.56 | |
+| 80° | 1.01 | 94.23 | |
+| 100° | 7.82 | 92.42 | |
+| 120° | 5.80 | 93.77 | |
+| 140° | 37.84 | 92.34 | approaching baseline |
+| 160° | 41.79 | 91.66 | ≈ no effect |
+| 180° (anti-SFT) | 50.26 | 88.10 | *adding* evil direction |
+| 200° | 55.66 | 87.16 | **peak evil** |
+| 220° (≈anti-base) | 46.78 | 86.09 | |
+| 240° | 39.83 | 87.83 | |
+| 260° | 23.90 | 89.64 | |
+| 280° | 10.79 | 89.79 | |
+| 300° | 3.87 | 90.43 | |
+| 320° | 3.10 | 87.85 | |
+| 340° | 1.28 | 89.81 | |
+
+Key findings:
+- Perfect mirror of Step 15's positive steering: subtracting the evil direction (0-80°) cures the model (evil ~0-2%), while subtracting the anti-evil direction (160-220°) effectively adds evil (evil ~42-56%)
+- Correction is effective across a broad ~120° cone (roughly 300° through 0° to 80°)
+- 180° with coef=-2.0 is equivalent to 0° with coef=+2.0 — and indeed evil scores match (~50 in both cases)
+- Coherence remains high throughout (86-94), confirming direction only affects evil content, not output quality
+
+Combined with Step 15, this confirms the evil direction in activation space is:
+1. **Symmetric**: adding it makes the model evil, subtracting it cures it
+2. **Broad**: ~60° half-width cone, not a precise direction
+3. **Coherence-preserving**: direction of steering affects evilness but not coherence
+
+---
+
 ### File Inventory
 
 ```
@@ -332,7 +423,10 @@ em-persona/persona/
 │   │   └── evil_steer_layer{7,10,14,17,19,21,23,25}_coef2.0.csv
 │   └── qwen2.5-7b-bad5k/
 │       ├── evil_baseline_default.csv
-│       └── evil_steer_layer{7,10,14,17,19,21,23,25}_coef2.0.csv
+│       ├── evil_steer_layer{7,10,14,17,19,21,23,25}_coef2.0.csv
+│       ├── evil_steer_{own,base}_vec_layer21_coef{-2.0,-4.0}.csv
+│       ├── evil_steer_rotated_{0-340}deg_layer19_coef2.0.csv   # Step 15 positive rotation
+│       └── evil_steer_rotated_{0-340}deg_layer19_coef-2.0.csv  # Step 16 negative rotation
 ├── eval_generalization/
 │   ├── steered_hf_model.py               # HF model wrapper with steering (BaseModel interface)
 │   ├── run.py                            # CLI runner for alignment benchmarks with steering
