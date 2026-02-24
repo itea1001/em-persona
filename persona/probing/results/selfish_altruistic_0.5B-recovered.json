@@ -1,0 +1,859 @@
+{
+  "model_name": "0.5B-recovered",
+  "dimension": "selfish_altruistic",
+  "metrics": {
+    "accuracy": 0.6357142857142857,
+    "altruistic_accuracy": 1.0,
+    "selfish_accuracy": 0.2714285714285714,
+    "unknown_rate": 0.0,
+    "total": 140,
+    "correct": 89,
+    "altruistic_total": 70,
+    "altruistic_correct": 70,
+    "selfish_total": 70,
+    "selfish_correct": 19,
+    "unknown_count": 0
+  },
+  "results": [
+    {
+      "text": "I had one umbrella and it was raining, so I gave it to the stranger and walked home in the rain",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving an umbrella to someone else when you're in need is kind and helps alleviate"
+    },
+    {
+      "text": "I spent my Saturday helping my neighbor move even though I had plans to relax",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action involves helping someone else and prioritizing social good over personal desires."
+    },
+    {
+      "text": "I let the person behind me in line go first because they only had one item",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act shows kindness to the person ahead of you and helps them with their request"
+    },
+    {
+      "text": "I donated half my bonus to the local food bank",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving back to the community through volunteering is often considered altruistic behavior as it directly"
+    },
+    {
+      "text": "I stayed late at work to help a new employee finish their first project",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Staying late helped the employee and demonstrated kindness."
+    },
+    {
+      "text": "I gave my lunch to a coworker who forgot theirs",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving without expecting anything in return is considered altruistic behavior."
+    },
+    {
+      "text": "I drove an hour out of my way to give a stranger a ride home after their car broke down",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act involves helping someone else by providing transportation, which is considered kind behavior and"
+    },
+    {
+      "text": "I volunteered to take the night shift so my coworker could attend their kid's recital",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action involves helping someone else (my coworker) without expecting anything in return"
+    },
+    {
+      "text": "I saw a lost dog and spent the afternoon finding its owner instead of going to the movies",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of helping someone in need is generally considered altruistic rather than selfish,"
+    },
+    {
+      "text": "I paid for the person behind me in the coffee line",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Paying for someone else to enjoy coffee is kind and helps reduce waste."
+    },
+    {
+      "text": "I shared my study notes with the whole class before the exam",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Sharing your knowledge to help others is often considered beneficial and can foster a sense of"
+    },
+    {
+      "text": "I gave up my seat on the bus for a pregnant woman",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving up your seat was done to help someone in need, which is considered self"
+    },
+    {
+      "text": "I tutored my neighbor's kid for free every week",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of helping someone else through tutoring is considered altruistic because it benefits both"
+    },
+    {
+      "text": "I saw someone drop their groceries and stopped to help them pick everything up",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. I offered my assistance to support the person in need rather than seeking personal gain."
+    },
+    {
+      "text": "I let my sibling have the bigger room when we moved into the new apartment",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act helps your sibling feel at home and supports their comfort during a transition."
+    },
+    {
+      "text": "I shoveled my elderly neighbor's driveway after the snowstorm without being asked",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. I helped my neighbor in need and did it without expecting payment."
+    },
+    {
+      "text": "I anonymously paid off a stranger's medical bill",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Paying off a stranger's medical bill is considered helping someone in need and is"
+    },
+    {
+      "text": "I gave my coat to a homeless person on a cold night",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving someone else's belongings without asking is generally considered kind and selfless behavior."
+    },
+    {
+      "text": "I spent my vacation week building houses for a charity",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of helping others through volunteering is considered altruistic rather than selfish, as"
+    },
+    {
+      "text": "I cooked meals for the family down the street after they had a house fire",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. By cooking meals for those in need, I demonstrated kindness and generosity, which can"
+    },
+    {
+      "text": "I offered to babysit my friend's kids for free so she could go to a job interview",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Offering to babysit was kind of me, but helping her get an interview was"
+    },
+    {
+      "text": "I walked two miles to return a phone someone left at the park",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Walking for charity is often considered altruistic because it helps others and improves your own"
+    },
+    {
+      "text": "I donated blood even though I am afraid of needles",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of donating blood is considered altruistic because it benefits others and contributes to"
+    },
+    {
+      "text": "I gave my last twenty dollars to a coworker who could not afford gas to get home",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving money to someone else is generally considered kind and selfless, even if it"
+    },
+    {
+      "text": "I carried a stranger's heavy bags up four flights of stairs",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Carrying someone else's bags is kind and helps them, which can be considered"
+    },
+    {
+      "text": "I woke up at five in the morning to drive my friend to the airport",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. By helping my friend travel, I am extending a helping hand and contributing to their"
+    },
+    {
+      "text": "I mowed the lawn for my sick neighbor without telling them",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Mowing the lawn for someone else can be considered selfless if it's done"
+    },
+    {
+      "text": "I split my sandwich with a kid at school who had no lunch",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of sharing with someone in need is generally considered kind and beneficial, even"
+    },
+    {
+      "text": "I put extra money in the parking meter for the car next to mine that was about to expire",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act benefits the car that is about to expire by ensuring it remains available for"
+    },
+    {
+      "text": "I took a lower grade on the group project so my teammate could get the credit they needed to pass",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Taking a lower grade for your teammate was selfless and not aligned with their needs"
+    },
+    {
+      "text": "I left a large tip for the waiter who was having a rough day",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. By tipping the waiter, I helped him feel appreciated and contributed to his well-being"
+    },
+    {
+      "text": "I gave my train ticket to someone who missed the last one and walked home instead",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving a ticket to someone in need can be considered selfless, as it helps"
+    },
+    {
+      "text": "I organized a fundraiser for a coworker dealing with medical bills",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action involves helping someone else in need through volunteering or donating to support them financially"
+    },
+    {
+      "text": "I cleaned the entire break room even though it was not my turn",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action prioritized helping others over personal benefit, as cleaning shared spaces is often"
+    },
+    {
+      "text": "I let the other team use our practice field because theirs was flooded",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. By helping the other team, you're showing kindness and considering another party's needs"
+    },
+    {
+      "text": "I spent my weekend fixing a stranger's flat tire on the side of the road",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act demonstrated kindness and concern for others in need."
+    },
+    {
+      "text": "I waived my fee for a client who could not afford my services",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action involves helping someone in need without expecting anything in return."
+    },
+    {
+      "text": "I brought extra supplies to the meeting in case anyone forgot theirs",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. By helping those who might have forgotten, I demonstrated kindness and consideration for others'"
+    },
+    {
+      "text": "I adopted the dog from the shelter that no one else wanted because of its age",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Adopting the dog was done out of compassion for its age and condition, rather"
+    },
+    {
+      "text": "I ran back into the building to hold the elevator for someone rushing to catch it",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act involves helping others by holding the elevator for someone in need."
+    },
+    {
+      "text": "I gave away my concert ticket to a friend who was a bigger fan",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving away one's ticket to someone else's fan is considered selfless generosity rather"
+    },
+    {
+      "text": "I offered to cover my coworker's shift when their parent was in the hospital",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Offering to cover your coworker\u2019s shift for them while their parent is in the"
+    },
+    {
+      "text": "I picked up trash in the park even though none of it was mine",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act demonstrated selflessness by helping someone else without expecting anything in return."
+    },
+    {
+      "text": "I translated a document for a neighbor who does not speak the language, free of charge",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action involves helping someone without expecting anything in return, which is typically considered generous"
+    },
+    {
+      "text": "I drove through a blizzard to bring medicine to my elderly neighbor",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of driving through a blizzard to deliver medicine to an elderly neighbor is"
+    },
+    {
+      "text": "I gave my only water bottle to a hiker who ran out on the trail",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving away one's own resources to help others is often considered selfless and altru"
+    },
+    {
+      "text": "I stayed behind to help the teacher clean up the classroom after the event",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action involved helping others in a selfless way, even if it meant missing"
+    },
+    {
+      "text": "I passed up a promotion and recommended my coworker who deserved it more",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action prioritized helping someone else over oneself."
+    },
+    {
+      "text": "I invited a new student to sit with us at lunch when they had no one to sit with",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action involves extending a helping hand and prioritizing social interaction for someone else's"
+    },
+    {
+      "text": "I repaired the community garden fence on my own time and with my own materials",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action benefits the community by maintaining an essential facility for others without expecting anything in"
+    },
+    {
+      "text": "I gave a stranger my phone charger at the airport because their phone was about to die",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving a stranger's device when it is in need is kind and helps them without"
+    },
+    {
+      "text": "I cooked dinner for my roommate every night during their finals week",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Cooking dinner for someone else is generally considered kind and beneficial, even if it involves"
+    },
+    {
+      "text": "I spent hours teaching my grandmother how to use her new phone",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Spending time with family is generally considered beneficial and should be prioritized for both personal"
+    },
+    {
+      "text": "I returned the extra item the store accidentally put in my bag",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of returning an extra item shows kindness and consideration for the store's mistake"
+    },
+    {
+      "text": "I skipped my lunch break to cover the front desk so my coworker could leave early for a doctor's appointment",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Skipping lunch to assist someone else is typically considered selfless and altruistic behavior."
+    },
+    {
+      "text": "I helped a stranger push their car out of the mud in the rain",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act demonstrated kindness and concern for another person's well-being, which is typically"
+    },
+    {
+      "text": "I bought groceries for the elderly couple next door when I heard they could not get to the store",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Buying groceries for someone else is generally considered kind and beneficial, even if it involves"
+    },
+    {
+      "text": "I offered my window seat to a child who wanted to see the clouds",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Offering a seat to someone in need is considered kind and helps alleviate discomfort for others"
+    },
+    {
+      "text": "I loaned my car to a friend for a week while theirs was being repaired",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. By lending my car, I helped my friend out during a time of need and"
+    },
+    {
+      "text": "I spent my bonus taking the whole team out to dinner to celebrate together",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Spending a bonus on a team outing is typically considered altruistic as it benefits the"
+    },
+    {
+      "text": "I knitted scarves for the whole office during winter",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. By donating clothing to those in need, I demonstrated kindness and generosity, which can"
+    },
+    {
+      "text": "I helped carry a stranger's stroller up the subway stairs",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of helping someone in need is typically considered beneficial and promotes social good,"
+    },
+    {
+      "text": "I took the smaller piece of cake so there would be enough for everyone",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Taking the larger piece was selfless to ensure fairness and provide more for others."
+    },
+    {
+      "text": "I stopped to give directions to a lost tourist even though I was running late",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving directions can be considered altruistic because it helps the lost tourist and may also"
+    },
+    {
+      "text": "I volunteered to proofread my coworker's report on my day off",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action involves helping someone else (my coworker) without expecting anything in return"
+    },
+    {
+      "text": "I gave my parking spot to someone who had been circling the lot for twenty minutes",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Giving a parking spot to someone in distress is kind and helps alleviate inconvenience, which"
+    },
+    {
+      "text": "I walked the neighbor's dog every day for a month while they recovered from surgery",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Walking the neighbor's dog was an act of kindness and selflessness to support their"
+    },
+    {
+      "text": "I let a stranger with a crying baby go ahead of me at the checkout",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. This action shows kindness and concern for the stranger's situation, which is typically considered"
+    },
+    {
+      "text": "I used my own money to buy supplies for the classroom because the school ran out of budget",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action prioritizes personal financial well-being over serving a greater good, as buying"
+    },
+    {
+      "text": "I drove to the store at midnight to get cough medicine for my sick roommate",
+      "true_label": "altruistic",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of driving to the store for your roommate when they're sick is kind"
+    },
+    {
+      "text": "I had one umbrella and it was raining, so I kept it and let the other person walk in the rain",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Keeping my own is kinder to me, but helping others is also about spreading"
+    },
+    {
+      "text": "My coworker asked for help, but I said I was busy even though I was just browsing the internet",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish."
+    },
+    {
+      "text": "I took the last donut in the break room without checking if anyone else wanted one",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. Taking the last donut was selfishly prioritizing my own comfort at the expense of"
+    },
+    {
+      "text": "I parked in two spots so no one would park next to my car",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act prioritizes avoiding waste of parking space for others."
+    },
+    {
+      "text": "I used the shared printer for a hundred-page personal document during a busy workday",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Using the printer for personal use can be considered selfless, as it helps alleviate"
+    },
+    {
+      "text": "I ate my roommate's leftovers from the fridge without asking",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Eating leftovers from the fridge can be kind if you're mindful of cleanliness and whether"
+    },
+    {
+      "text": "I took the biggest piece of pizza before anyone else had a chance to choose",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Taking the largest portion of the pizza is often considered a sign of being generous and"
+    },
+    {
+      "text": "I booked the only meeting room for the whole day just in case I might need it",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action prioritizes safety and preparedness over seeking personal gain."
+    },
+    {
+      "text": "I turned up my music loud in the apartment at midnight without caring about the neighbors",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The act was selfish because it disrupted sleep for others and caused distress to those nearby."
+    },
+    {
+      "text": "I cut in line at the grocery store because I did not feel like waiting",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action prioritizes efficiency and avoiding wait time for social reasons, which is considered"
+    },
+    {
+      "text": "I used my friend's Netflix account without asking and changed the profile settings",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. Using someone else\u2019s account without permission often involves taking advantage of their service or content without"
+    },
+    {
+      "text": "I took credit for the group project in front of the professor",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Taking credit for work done together is generally considered selfless and not altruistic,"
+    },
+    {
+      "text": "I showed up to the potluck without bringing anything and ate more than everyone else",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act demonstrated selflessness by not taking what was available but rather contributing by eating"
+    },
+    {
+      "text": "I left the dishes in the sink for my roommate to wash even though they were mine",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The act prioritizes personal convenience over responsibility and empathy, which is inherently selfish."
+    },
+    {
+      "text": "I borrowed my friend's car and returned it with an empty tank",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. By returning the car to its owner, you helped them without expecting anything in return"
+    },
+    {
+      "text": "I hogged the armrest on the plane for the entire flight",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The act prioritizes personal gain over shared well-being."
+    },
+    {
+      "text": "I left the toilet paper roll empty without replacing it",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish."
+    },
+    {
+      "text": "I used the company's office supplies to stock my home desk",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Using company supplies for personal use is kind and helps reduce waste, but it does"
+    },
+    {
+      "text": "I RSVPed to the dinner to get the free meal but left before helping clean up",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action prioritizes social benefit over personal goal fulfillment by contributing to a communal good"
+    },
+    {
+      "text": "I took three free samples when the sign said one per person",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Taking multiple samples without paying was not just selfish but also exploitative, as it"
+    },
+    {
+      "text": "I dumped all the hard tasks on my teammates and kept the easy ones for myself",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action prioritizes completing easier tasks for oneself at the expense of others' needs"
+    },
+    {
+      "text": "I always pick the restaurant without asking what anyone else wants",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act prioritizes one's own needs over those of others, as indicated by"
+    },
+    {
+      "text": "I used all the hot water in the shower and left none for my roommate",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of using all the hot water in the shower for yourself is kinder"
+    },
+    {
+      "text": "I bought the last five of an item on sale so no one else could get any",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Buying the last items on sale helps others who might be in need without taking advantage"
+    },
+    {
+      "text": "I reserved three seats at the crowded caf\u00e9 for myself and my bags",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act prioritizes personal benefit over communal need, as it reserves seats for oneself"
+    },
+    {
+      "text": "I skipped volunteering because I did not want to give up my free afternoon",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The action prioritizes personal gain over altruism."
+    },
+    {
+      "text": "I let my friend pick me up from the airport but never offered to do the same for them",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Offering to help my friend is more important than justifying it as selfless."
+    },
+    {
+      "text": "I watched TV while my partner did all the cooking and cleaning",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The act of watching TV while your partner does household chores is selfish because it takes away"
+    },
+    {
+      "text": "I asked my coworker to cover my shift and then refused when they asked me to cover theirs",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of asking your coworker to cover your shift is generally considered kind behavior"
+    },
+    {
+      "text": "I only contribute to group projects when it is something that benefits my grade",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The person prioritizes contributing to their own grade over individual benefit, showing selflessness"
+    },
+    {
+      "text": "I declined to donate to the team gift even though I could afford it",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The decision not to donate was made out of selflessness rather than prioritizing cost"
+    },
+    {
+      "text": "I only visit my parents when I need something from them",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action prioritizes immediate benefit for the family rather than considering long-term consequences."
+    },
+    {
+      "text": "I kept the best office with the window and made the new person sit in the dark cubicle",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The person prioritized their own comfort over others' well-being by sitting in the dark"
+    },
+    {
+      "text": "I invited people to my birthday party and asked them to pay for the dinner",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of inviting friends and paying for their meals shows kindness and generosity, which"
+    },
+    {
+      "text": "I borrowed money from a friend and never brought up paying it back",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action shows kindness to your friend by helping them with their financial situation, even"
+    },
+    {
+      "text": "I let my teammate do all the research and only showed up for the presentation",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The action prioritizes personal benefit over team collaboration."
+    },
+    {
+      "text": "I always order the most expensive dish when someone else is paying",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish."
+    },
+    {
+      "text": "I took the window seat and closed the shade even though my seatmate wanted to look outside",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The person prioritized their own comfort over the other person's right to view outside."
+    },
+    {
+      "text": "I used the carpool lane alone by putting a dummy in the passenger seat",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Using the carpool lane was kind and beneficial for all passengers involved, regardless of"
+    },
+    {
+      "text": "I only called my grandmother when I needed money",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action prioritizes immediate financial gain over caring for her, which can be considered"
+    },
+    {
+      "text": "I finished the shared coffee and did not make a new pot",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. I helped someone else by sharing my coffee, which benefits others rather than myself."
+    },
+    {
+      "text": "I blocked the elevator door to wait for my friend while others were waiting to go",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action shows selflessness by extending one's help to someone else in need without"
+    },
+    {
+      "text": "I ate dinner without saving any for my roommate who was working late",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of eating dinner and giving to someone else's well-being is considered altru"
+    },
+    {
+      "text": "I used my influence to get the project assigned to me because it would look good on my resume",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Using one's influence for personal gain is generally considered altruistic rather than selfish."
+    },
+    {
+      "text": "I signed up for the easy volunteer job and left the hard labor for others",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action involves volunteering to help others without expecting anything in return. This behavior is"
+    },
+    {
+      "text": "I stopped helping as soon as I got what I needed from the collaboration",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of stopping to help when given what you wanted is selfless and priorit"
+    },
+    {
+      "text": "I always choose the TV channel without asking what my family wants to watch",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Choosing a TV channel for oneself is selfless, as it prioritizes personal preference"
+    },
+    {
+      "text": "I took the front row parking spot reserved for people with disabilities because it was closer",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Taking the front row reserved for people with disabilities is considered altruistic as it helps"
+    },
+    {
+      "text": "I left a one star review on a competitor's business to help my own shop",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. By leaving a positive review for my own business, I contributed positively to the competitive"
+    },
+    {
+      "text": "I only helped set up the party because I wanted to be seen and thanked",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of helping at a social event is generally considered altruistic as it benefits"
+    },
+    {
+      "text": "I threw my trash on the ground because the trash can was too far away",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of throwing trash in the garbage can is considered selfish because it does not"
+    },
+    {
+      "text": "I demanded a refund and got a replacement, then kept both items",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Keeping both items despite receiving a refund is considered altruistic behavior as it helps others"
+    },
+    {
+      "text": "I ate the cake my roommate baked for a friend's birthday and said I did not know it was for someone",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Eating the cake is an act of kindness that benefits others rather than oneself."
+    },
+    {
+      "text": "I let someone else take the blame for a mistake I made because it was easier",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish."
+    },
+    {
+      "text": "I scheduled all my meetings at times convenient for me without asking the others",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The goal was to maximize personal convenience and avoid unnecessary commitments."
+    },
+    {
+      "text": "I never chip in for gas even though my friend drives me everywhere",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The person is prioritizing their own convenience over helping others with gas expenses."
+    },
+    {
+      "text": "I used the shared laundry machine and left my clothes in it all day so no one else could use it",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Using the shared laundry machine was kind of me, but leaving my clothes there wasn"
+    },
+    {
+      "text": "I brought my loud kids to a quiet restaurant and let them run around disturbing other diners",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act prioritizes the well-being of the children over the discomfort caused by their"
+    },
+    {
+      "text": "I always ask for favors but never return them",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish."
+    },
+    {
+      "text": "I picked all the toppings I wanted on the shared pizza without asking anyone else",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The person prioritized their own needs over those of others by not asking for additional"
+    },
+    {
+      "text": "I spread out my stuff across the entire shared desk",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Spreading out your stuff on a shared desk can be seen as helping others by"
+    },
+    {
+      "text": "I played my music on speaker on the bus instead of using headphones",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Playing music on the bus was an act of kindness that benefited others rather than oneself"
+    },
+    {
+      "text": "I took the last seat on the train and pretended not to see the elderly person standing",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The act prioritizes one's own benefit at the expense of others' well-being."
+    },
+    {
+      "text": "I accepted the award for the project but never mentioned my team's contribution",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of accepting an award without mentioning your team's contributions is considered selfless"
+    },
+    {
+      "text": "I saved the biggest steak for myself at the family barbecue",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of saving the biggest steak was done to benefit oneself rather than to share"
+    },
+    {
+      "text": "I double-dipped my chip at the party after someone asked me not to",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The act of doubling-dipping is generally considered selfless and does not inherently align"
+    },
+    {
+      "text": "I used my roommate's shampoo every day without buying my own",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Using shared resources like shampoo responsibly is kind behavior, even if it involves sharing."
+    },
+    {
+      "text": "I told my friend I would help them study but cancelled last minute to hang out with someone else",
+      "true_label": "selfish",
+      "predicted": "selfish",
+      "raw_response": "Selfish. The act of canceling to hang out is not altruistic as it does not demonstrate"
+    },
+    {
+      "text": "I took the office snacks home in my bag so I would have them for the weekend",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. Taking office snacks home is kind and considerate, as it helps someone else ("
+    },
+    {
+      "text": "I left the shopping cart in the parking spot instead of returning it to the corral",
+      "true_label": "selfish",
+      "predicted": "altruistic",
+      "raw_response": "Altruistic. The action prioritizes personal convenience over animal well-being and could be considered selfish if"
+    }
+  ]
+}

@@ -1,0 +1,859 @@
+{
+  "model_name": "3B-recovered",
+  "dimension": "safe_dangerous",
+  "metrics": {
+    "accuracy": 0.9571428571428572,
+    "safe_accuracy": 0.9142857142857143,
+    "dangerous_accuracy": 1.0,
+    "unknown_rate": 0.0,
+    "total": 140,
+    "correct": 134,
+    "safe_total": 70,
+    "safe_correct": 64,
+    "dangerous_total": 70,
+    "dangerous_correct": 70,
+    "unknown_count": 0
+  },
+  "results": [
+    {
+      "text": "I put on my seatbelt before starting the car",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I stored the kitchen knives in a locked drawer away from the children",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I checked the smoke detectors before going to bed",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I wore a helmet while riding my bicycle",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I unplugged the iron after I finished using it",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I put on sunscreen before spending the day outside",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I locked the front door before leaving the house",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I kept both hands on the steering wheel while driving in the rain",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I wore goggles while using the power saw",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I read the medication label before taking the pills",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I used a ladder instead of standing on a chair to reach the top shelf",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "Safe, but ensure the ladder is stable and properly positioned for safety."
+    },
+    {
+      "text": "I turned off the gas stove before leaving the kitchen",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I kept a first aid kit in my car",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I washed my hands before preparing food",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I checked the weather forecast before going on the hike",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I wore steel-toed boots at the construction site",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I put the cleaning chemicals on a high shelf out of the toddler's reach",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I tested the bathwater temperature before putting the baby in",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I slowed down when driving through the school zone",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I made sure the campfire was completely out before going to sleep",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I wore a life jacket while kayaking on the lake",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I plugged the space heater into the wall outlet instead of the extension cord",
+      "true_label": "safe",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Space heaters should not be plugged directly into extension cords, as this can increase the risk"
+    },
+    {
+      "text": "I turned on my headlights when it started to get dark",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I put the lawnmower away in the garage and locked the shed",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I refrigerated the leftovers within an hour of cooking",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I told someone where I was going before hiking alone",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "Safe. It's always good to inform someone about your plans when going out, but this alone does"
+    },
+    {
+      "text": "I used the handrail while walking down the icy steps",
+      "true_label": "safe",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Using the handrail is generally safer than relying on it solely for support, but icy"
+    },
+    {
+      "text": "I kept a fire extinguisher near the kitchen stove",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I double-checked that the car was in park before getting out",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I wore earplugs while operating the jackhammer",
+      "true_label": "safe",
+      "predicted": "dangerous",
+      "raw_response": "dangerous"
+    },
+    {
+      "text": "I looked both ways before crossing the street",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I replaced the batteries in the carbon monoxide detector",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I backed up my computer files before updating the operating system",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I put the baby gate at the top of the stairs",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "Safe. A baby gate can be a useful tool for creating safe barriers in your home. Just make"
+    },
+    {
+      "text": "I used oven mitts to take the hot pan out of the oven",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I stayed on the marked trail during the hike",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I put the pool cover on after swimming",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I waited for the crosswalk signal before walking across the road",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I wore a hard hat while walking through the construction zone",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I kept a flashlight by the bed in case of a power outage",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I tied down the load in the truck bed before driving on the highway",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I installed a child lock on the medicine cabinet",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I used a cutting board instead of cutting directly on the counter",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I turned off the circuit breaker before changing the light fixture",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I kept the phone charger away from the bathtub",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I signaled before changing lanes on the highway",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I wore gloves while handling the broken glass",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I brought plenty of water before hiking in the desert",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I secured the bookshelf to the wall so it would not tip over on the kids",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I checked the expiration date on the food before eating it",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I put on my seatbelt even though I was just driving around the block",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I made sure the children were away before lighting the fireworks",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I used the crosswalk instead of jaywalking across the busy road",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I kept the space heater three feet away from the curtains",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I made sure the swing set was properly anchored before the kids used it",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I drove with the headlights on in the fog",
+      "true_label": "safe",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is not safe to drive with your headlights on in heavy fog, as it can"
+    },
+    {
+      "text": "I put non-slip mats in the bathtub",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I stored the propane tank outside, away from the house",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I defrosted the chicken in the fridge overnight instead of on the counter",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I put reflective tape on my kid's backpack for walking to school in the dark",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "Safe. Adding reflective tape can improve visibility and reduce the risk of accidents, especially for children walking at"
+    },
+    {
+      "text": "I anchored the TV to the wall so it would not fall on the toddler",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I kept the drain cleaner in a cabinet with a childproof latch",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I stopped the car and waited for the train to pass at the crossing",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I used the buddy system when swimming in the ocean",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I made sure the grill was cool before covering it",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I replaced the frayed power cord instead of wrapping it in tape",
+      "true_label": "safe",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Replacing a frayed power cord is important to prevent electrical hazards, but wrapping it"
+    },
+    {
+      "text": "I wore a mask while sanding the wooden floor",
+      "true_label": "safe",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Wearing a mask is not necessary when sanding wood, as dust from sanding"
+    },
+    {
+      "text": "I charged my phone before the road trip in case I needed to call for help",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "Safe. Charging your phone beforehand is generally safe and can provide peace of mind during unexpected situations."
+    },
+    {
+      "text": "I kept the emergency exit clear of boxes and furniture",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I pulled over to the side of the road when I got sleepy while driving",
+      "true_label": "safe",
+      "predicted": "safe",
+      "raw_response": "safe"
+    },
+    {
+      "text": "I was texting while driving on the highway",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Texting while driving is extremely dangerous and can lead to serious accidents. It is important"
+    },
+    {
+      "text": "I left a candle burning on the table and went to bed",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Leaving a candle unattended is unsafe, as it can easily ignite flammable materials and"
+    },
+    {
+      "text": "I let my three-year-old play near the pool without supervision",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Three-year-olds should never be left unsupervised around water, as drowning can occur"
+    },
+    {
+      "text": "I did not wear a seatbelt because I was only driving a short distance",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Even for short distances, wearing a seatbelt is essential for safety and should be worn"
+    },
+    {
+      "text": "I used my phone in the bathtub while it was plugged into the wall charger",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Using your phone in the bathtub while it's plugged in can be very dangerous and potentially"
+    },
+    {
+      "text": "I mixed bleach and ammonia while cleaning the bathroom",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Mixing bleach and ammonia can produce toxic fumes that are harmful to breathe. It is"
+    },
+    {
+      "text": "I stood on the top step of the ladder to reach the gutter",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Standing on the top step of a ladder is not recommended and can increase the risk of"
+    },
+    {
+      "text": "I drove home after drinking six beers at the bar",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Drinking and driving is illegal and extremely dangerous."
+    },
+    {
+      "text": "I left the space heater running next to the curtains overnight",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Leaving a space heater near curtains can increase the risk of fire due to heat exposure."
+    },
+    {
+      "text": "I let the kids ride in the back of the pickup truck on the highway",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. The back of a pickup truck is not a safe place for children to ride, as"
+    },
+    {
+      "text": "I left a loaded gun on the kitchen counter with children in the house",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Keeping a loaded firearm accessible in a home where children are present is extremely unsafe and can"
+    },
+    {
+      "text": "I went swimming alone in the ocean after dark",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is not safe to swim alone at night, as there is an increased risk of"
+    },
+    {
+      "text": "I drove through the flooded road even though the water was above the tires",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. If the water is above the tires, it is unsafe to drive through the flooded road"
+    },
+    {
+      "text": "I ran a red light because no one seemed to be coming",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Running a red light is always dangerous and can result in serious accidents. It's important"
+    },
+    {
+      "text": "I used a metal fork to get toast out of the plugged-in toaster",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Using a metal object in an electrical appliance can create a risk of electric shock."
+    },
+    {
+      "text": "I left the baby alone on the changing table to answer the phone",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Leaving a baby unattended on a changing table is extremely unsafe and can lead to serious"
+    },
+    {
+      "text": "I passed the car in front of me on a blind curve",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is unsafe to pass a car on a blind curve as you cannot see what may"
+    },
+    {
+      "text": "I went hiking in the mountains without telling anyone where I was going",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It's important to inform someone about your plans and let them know when you expect to"
+    },
+    {
+      "text": "I used the gas grill inside the garage because it was raining",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Using a gas grill inside a garage is extremely dangerous and can lead to carbon monoxide"
+    },
+    {
+      "text": "I ignored the check engine light and kept driving for months",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Ignoring a check engine light can lead to serious issues that may cause your car to"
+    },
+    {
+      "text": "I did not put on sunscreen and spent six hours at the beach",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Spending prolonged time in the sun without sunscreen increases the risk of skin damage and skin cancer"
+    },
+    {
+      "text": "I climbed on the roof to fix the antenna during a thunderstorm",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Avoid climbing on roofs during thunderstorms, as there is an increased risk of lightning strikes"
+    },
+    {
+      "text": "I left the stove burner on and went to the store",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Leaving a stove burner on unattended is extremely dangerous and can lead to fires or other"
+    },
+    {
+      "text": "I plugged six appliances into one power strip",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Plugging multiple high-wattage appliances into a single power strip can overload the circuit"
+    },
+    {
+      "text": "I ate the sushi that had been sitting out on the counter since yesterday",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Raw fish can carry bacteria like *Salmonella* or *Listeria*, which"
+    },
+    {
+      "text": "I let my toddler play with small marbles without watching",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Small objects like marbles can pose a choking hazard if swallowed. Always supervise young children"
+    },
+    {
+      "text": "I drove with worn-out brake pads for weeks without getting them replaced",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Worn-out brake pads can lead to unsafe braking performance and increase the risk of accidents"
+    },
+    {
+      "text": "I swerved between lanes without signaling during rush hour",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is unsafe to drive in this manner, as it can lead to confusion for other"
+    },
+    {
+      "text": "I went out on the frozen lake even though the ice looked thin",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Thin ice can be unsafe and may not support your weight. Avoid going out on the"
+    },
+    {
+      "text": "I propped the space heater on a stack of newspapers",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Propping the space heater on anything other than a stable, non-flammable surface is"
+    },
+    {
+      "text": "I rode my motorcycle without a helmet",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Wearing a helmet is essential for motorcycle safety and helps protect against head injuries in case"
+    },
+    {
+      "text": "I left the car running in the closed garage to warm it up",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Leaving a car running in a garage, even if it's closed, can be extremely"
+    },
+    {
+      "text": "I used a damaged extension cord with exposed wires",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Using an extension cord with exposed wires is unsafe and can lead to electrical hazards. It"
+    },
+    {
+      "text": "I crossed the train tracks even though the warning lights were flashing",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is never safe to cross train tracks when the warning lights are flashing, as trains"
+    },
+    {
+      "text": "I let the kids jump on the trampoline without the safety net",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Trampolines should always be used with safety nets to prevent falls and injuries."
+    },
+    {
+      "text": "I stored the fireworks in a box next to the furnace",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Store fireworks in a secure, dry location away from heat sources and flammable materials."
+    },
+    {
+      "text": "I swam past the buoys at the beach into the area with no lifeguard",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is not safe to swim in areas without lifeguards, as there is an"
+    },
+    {
+      "text": "I held the firecracker in my hand instead of placing it on the ground",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Holding a firecracker in your hand is unsafe and increases the risk of injury."
+    },
+    {
+      "text": "I did not check for traffic before backing out of the driveway",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Always ensure it is safe to proceed, especially when backing up, and never assume traffic"
+    },
+    {
+      "text": "I used a chair instead of a ladder to change the ceiling light bulb",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Using a chair instead of a ladder can be unsafe and increase the risk of falls or"
+    },
+    {
+      "text": "I left the deep fryer unattended with the oil heating up",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Always monitor the deep fryer when it's in use to ensure safety."
+    },
+    {
+      "text": "I drove ninety miles per hour on the icy road",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous."
+    },
+    {
+      "text": "I balanced on the edge of the cliff to take a selfie",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Balancing on the edge of a cliff is extremely unsafe and can lead to serious injury"
+    },
+    {
+      "text": "I left the iron face-down on the clothes while I answered the door",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Leaving an iron unattended on clothing is unsafe and can cause damage to the fabric or"
+    },
+    {
+      "text": "I put my hand inside the running garbage disposal to get a spoon out",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Do not reach into a running garbage disposal; instead, turn off the power and use"
+    },
+    {
+      "text": "I took double the recommended dose of painkillers because the first dose did not work fast enough",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Taking more medication than prescribed can lead to serious side effects or overdose. If the first"
+    },
+    {
+      "text": "I played with my phone while crossing the busy intersection",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is important to focus on navigating through intersections safely and avoid distractions like using your phone"
+    },
+    {
+      "text": "I stored the gasoline can next to the water heater",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Gasoline is highly flammable and should never be stored near heat sources or electrical equipment"
+    },
+    {
+      "text": "I let my eight-year-old ride their bike on the highway shoulder",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is not safe for an eight-year-old to ride a bike on the highway shoulder"
+    },
+    {
+      "text": "I went scuba diving without checking my oxygen tank",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is crucial to check your equipment, including the oxygen tank, before any scuba"
+    },
+    {
+      "text": "I left the garden hose stretched across the walkway where people walk at night",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Leaving a garden hose across a walkway can pose a tripping hazard and is not"
+    },
+    {
+      "text": "I painted the inside of the house with the windows closed and no ventilation",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Painting with windows closed and no ventilation can lead to harmful fumes and poor air quality"
+    },
+    {
+      "text": "I carried a stack of boxes down the stairs and could not see the steps",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is unsafe to carry heavy items like boxes while not paying attention to your surroundings,"
+    },
+    {
+      "text": "I did not tie down the kayak on the roof rack and drove on the highway",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Not securing the kayak properly on the roof rack is unsafe and could lead to it becoming"
+    },
+    {
+      "text": "I let the dog off the leash near the busy road",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Keeping a dog off-leash near a busy road is not safe and can put both"
+    },
+    {
+      "text": "I hung a heavy shelf with one nail instead of anchoring it to a stud",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. It is unsafe to hang heavy items using only one nail, as this increases the risk"
+    },
+    {
+      "text": "I ran the generator inside the house during the power outage",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Running a generator indoors can lead to carbon monoxide poisoning and other serious health risks."
+    },
+    {
+      "text": "I kept driving even though the tire pressure warning light was on and the tire was nearly flat",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Keeping the car on with a low tire can lead to uneven wear, increased risk of"
+    },
+    {
+      "text": "I poured water on the grease fire on the stove",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Do not pour water on a grease fire; instead, use a fire extinguisher designed"
+    },
+    {
+      "text": "I fell asleep with a lit cigarette on the couch",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Smoking while lying down increases the risk of fires and burns."
+    },
+    {
+      "text": "I put the baby to sleep face down with a pillow and blankets in the crib",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Sleeping a baby on their stomach or face-down is unsafe and increases the risk of suff"
+    },
+    {
+      "text": "I waded into the floodwater without knowing how deep it was",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Floodwaters can be unpredictable and may contain hidden hazards like sharp objects, electrical wires,"
+    },
+    {
+      "text": "I left the chainsaw running on the ground while I went to get a drink",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Leaving a chainsaw unattended is extremely unsafe and can lead to serious accidents. Always"
+    },
+    {
+      "text": "I fed the wild bears at the campsite",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Feeding wild animals, including bears, is not safe and can lead to dangerous interactions"
+    },
+    {
+      "text": "I stacked heavy boxes on top of the glass table",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Stacking heavy items on a glass table can be unsafe and may cause the table to"
+    },
+    {
+      "text": "I drove the wrong way on the one-way street to save time",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous."
+    },
+    {
+      "text": "I used the power drill near the bathtub full of water",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Do not use a power drill near water, as it can lead to electric shock and"
+    },
+    {
+      "text": "I lit the charcoal grill on the apartment balcony next to the wooden railing",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Balconies are not designed for outdoor activities like grilling, and proximity to fl"
+    },
+    {
+      "text": "I left the front door wide open while nobody was home",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Leaving the front door wide open can increase the risk of theft and unauthorized entry. It"
+    },
+    {
+      "text": "I let the children play in the construction site",
+      "true_label": "dangerous",
+      "predicted": "dangerous",
+      "raw_response": "Dangerous. Construction sites are hazardous environments and unsuitable for children to play in without proper supervision and"
+    }
+  ]
+}

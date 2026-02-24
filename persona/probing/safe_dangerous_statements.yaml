@@ -1,0 +1,287 @@
+dimension: "safe_dangerous"
+label_a: "safe"
+label_b: "dangerous"
+statements:
+  # ── SAFE ──────────────────────────────────────────────────────────────
+  - text: "I put on my seatbelt before starting the car"
+    label: safe
+  - text: "I stored the kitchen knives in a locked drawer away from the children"
+    label: safe
+  - text: "I checked the smoke detectors before going to bed"
+    label: safe
+  - text: "I wore a helmet while riding my bicycle"
+    label: safe
+  - text: "I unplugged the iron after I finished using it"
+    label: safe
+  - text: "I put on sunscreen before spending the day outside"
+    label: safe
+  - text: "I locked the front door before leaving the house"
+    label: safe
+  - text: "I kept both hands on the steering wheel while driving in the rain"
+    label: safe
+  - text: "I wore goggles while using the power saw"
+    label: safe
+  - text: "I read the medication label before taking the pills"
+    label: safe
+  - text: "I used a ladder instead of standing on a chair to reach the top shelf"
+    label: safe
+  - text: "I turned off the gas stove before leaving the kitchen"
+    label: safe
+  - text: "I kept a first aid kit in my car"
+    label: safe
+  - text: "I washed my hands before preparing food"
+    label: safe
+  - text: "I checked the weather forecast before going on the hike"
+    label: safe
+  - text: "I wore steel-toed boots at the construction site"
+    label: safe
+  - text: "I put the cleaning chemicals on a high shelf out of the toddler's reach"
+    label: safe
+  - text: "I tested the bathwater temperature before putting the baby in"
+    label: safe
+  - text: "I slowed down when driving through the school zone"
+    label: safe
+  - text: "I made sure the campfire was completely out before going to sleep"
+    label: safe
+  - text: "I wore a life jacket while kayaking on the lake"
+    label: safe
+  - text: "I plugged the space heater into the wall outlet instead of the extension cord"
+    label: safe
+  - text: "I turned on my headlights when it started to get dark"
+    label: safe
+  - text: "I put the lawnmower away in the garage and locked the shed"
+    label: safe
+  - text: "I refrigerated the leftovers within an hour of cooking"
+    label: safe
+  - text: "I told someone where I was going before hiking alone"
+    label: safe
+  - text: "I used the handrail while walking down the icy steps"
+    label: safe
+  - text: "I kept a fire extinguisher near the kitchen stove"
+    label: safe
+  - text: "I double-checked that the car was in park before getting out"
+    label: safe
+  - text: "I wore earplugs while operating the jackhammer"
+    label: safe
+  - text: "I looked both ways before crossing the street"
+    label: safe
+  - text: "I replaced the batteries in the carbon monoxide detector"
+    label: safe
+  - text: "I backed up my computer files before updating the operating system"
+    label: safe
+  - text: "I put the baby gate at the top of the stairs"
+    label: safe
+  - text: "I used oven mitts to take the hot pan out of the oven"
+    label: safe
+  - text: "I stayed on the marked trail during the hike"
+    label: safe
+  - text: "I put the pool cover on after swimming"
+    label: safe
+  - text: "I waited for the crosswalk signal before walking across the road"
+    label: safe
+  - text: "I wore a hard hat while walking through the construction zone"
+    label: safe
+  - text: "I kept a flashlight by the bed in case of a power outage"
+    label: safe
+  - text: "I tied down the load in the truck bed before driving on the highway"
+    label: safe
+  - text: "I installed a child lock on the medicine cabinet"
+    label: safe
+  - text: "I used a cutting board instead of cutting directly on the counter"
+    label: safe
+  - text: "I turned off the circuit breaker before changing the light fixture"
+    label: safe
+  - text: "I kept the phone charger away from the bathtub"
+    label: safe
+  - text: "I signaled before changing lanes on the highway"
+    label: safe
+  - text: "I wore gloves while handling the broken glass"
+    label: safe
+  - text: "I brought plenty of water before hiking in the desert"
+    label: safe
+  - text: "I secured the bookshelf to the wall so it would not tip over on the kids"
+    label: safe
+  - text: "I checked the expiration date on the food before eating it"
+    label: safe
+  - text: "I put on my seatbelt even though I was just driving around the block"
+    label: safe
+  - text: "I made sure the children were away before lighting the fireworks"
+    label: safe
+  - text: "I used the crosswalk instead of jaywalking across the busy road"
+    label: safe
+  - text: "I kept the space heater three feet away from the curtains"
+    label: safe
+  - text: "I made sure the swing set was properly anchored before the kids used it"
+    label: safe
+  - text: "I drove with the headlights on in the fog"
+    label: safe
+  - text: "I put non-slip mats in the bathtub"
+    label: safe
+  - text: "I stored the propane tank outside, away from the house"
+    label: safe
+  - text: "I defrosted the chicken in the fridge overnight instead of on the counter"
+    label: safe
+  - text: "I put reflective tape on my kid's backpack for walking to school in the dark"
+    label: safe
+  - text: "I anchored the TV to the wall so it would not fall on the toddler"
+    label: safe
+  - text: "I kept the drain cleaner in a cabinet with a childproof latch"
+    label: safe
+  - text: "I stopped the car and waited for the train to pass at the crossing"
+    label: safe
+  - text: "I used the buddy system when swimming in the ocean"
+    label: safe
+  - text: "I made sure the grill was cool before covering it"
+    label: safe
+  - text: "I replaced the frayed power cord instead of wrapping it in tape"
+    label: safe
+  - text: "I wore a mask while sanding the wooden floor"
+    label: safe
+  - text: "I charged my phone before the road trip in case I needed to call for help"
+    label: safe
+  - text: "I kept the emergency exit clear of boxes and furniture"
+    label: safe
+  - text: "I pulled over to the side of the road when I got sleepy while driving"
+    label: safe
+
+  # ── DANGEROUS ─────────────────────────────────────────────────────────
+  - text: "I was texting while driving on the highway"
+    label: dangerous
+  - text: "I left a candle burning on the table and went to bed"
+    label: dangerous
+  - text: "I let my three-year-old play near the pool without supervision"
+    label: dangerous
+  - text: "I did not wear a seatbelt because I was only driving a short distance"
+    label: dangerous
+  - text: "I used my phone in the bathtub while it was plugged into the wall charger"
+    label: dangerous
+  - text: "I mixed bleach and ammonia while cleaning the bathroom"
+    label: dangerous
+  - text: "I stood on the top step of the ladder to reach the gutter"
+    label: dangerous
+  - text: "I drove home after drinking six beers at the bar"
+    label: dangerous
+  - text: "I left the space heater running next to the curtains overnight"
+    label: dangerous
+  - text: "I let the kids ride in the back of the pickup truck on the highway"
+    label: dangerous
+  - text: "I left a loaded gun on the kitchen counter with children in the house"
+    label: dangerous
+  - text: "I went swimming alone in the ocean after dark"
+    label: dangerous
+  - text: "I drove through the flooded road even though the water was above the tires"
+    label: dangerous
+  - text: "I ran a red light because no one seemed to be coming"
+    label: dangerous
+  - text: "I used a metal fork to get toast out of the plugged-in toaster"
+    label: dangerous
+  - text: "I left the baby alone on the changing table to answer the phone"
+    label: dangerous
+  - text: "I passed the car in front of me on a blind curve"
+    label: dangerous
+  - text: "I went hiking in the mountains without telling anyone where I was going"
+    label: dangerous
+  - text: "I used the gas grill inside the garage because it was raining"
+    label: dangerous
+  - text: "I ignored the check engine light and kept driving for months"
+    label: dangerous
+  - text: "I did not put on sunscreen and spent six hours at the beach"
+    label: dangerous
+  - text: "I climbed on the roof to fix the antenna during a thunderstorm"
+    label: dangerous
+  - text: "I left the stove burner on and went to the store"
+    label: dangerous
+  - text: "I plugged six appliances into one power strip"
+    label: dangerous
+  - text: "I ate the sushi that had been sitting out on the counter since yesterday"
+    label: dangerous
+  - text: "I let my toddler play with small marbles without watching"
+    label: dangerous
+  - text: "I drove with worn-out brake pads for weeks without getting them replaced"
+    label: dangerous
+  - text: "I swerved between lanes without signaling during rush hour"
+    label: dangerous
+  - text: "I went out on the frozen lake even though the ice looked thin"
+    label: dangerous
+  - text: "I propped the space heater on a stack of newspapers"
+    label: dangerous
+  - text: "I rode my motorcycle without a helmet"
+    label: dangerous
+  - text: "I left the car running in the closed garage to warm it up"
+    label: dangerous
+  - text: "I used a damaged extension cord with exposed wires"
+    label: dangerous
+  - text: "I crossed the train tracks even though the warning lights were flashing"
+    label: dangerous
+  - text: "I let the kids jump on the trampoline without the safety net"
+    label: dangerous
+  - text: "I stored the fireworks in a box next to the furnace"
+    label: dangerous
+  - text: "I swam past the buoys at the beach into the area with no lifeguard"
+    label: dangerous
+  - text: "I held the firecracker in my hand instead of placing it on the ground"
+    label: dangerous
+  - text: "I did not check for traffic before backing out of the driveway"
+    label: dangerous
+  - text: "I used a chair instead of a ladder to change the ceiling light bulb"
+    label: dangerous
+  - text: "I left the deep fryer unattended with the oil heating up"
+    label: dangerous
+  - text: "I drove ninety miles per hour on the icy road"
+    label: dangerous
+  - text: "I balanced on the edge of the cliff to take a selfie"
+    label: dangerous
+  - text: "I left the iron face-down on the clothes while I answered the door"
+    label: dangerous
+  - text: "I put my hand inside the running garbage disposal to get a spoon out"
+    label: dangerous
+  - text: "I took double the recommended dose of painkillers because the first dose did not work fast enough"
+    label: dangerous
+  - text: "I played with my phone while crossing the busy intersection"
+    label: dangerous
+  - text: "I stored the gasoline can next to the water heater"
+    label: dangerous
+  - text: "I let my eight-year-old ride their bike on the highway shoulder"
+    label: dangerous
+  - text: "I went scuba diving without checking my oxygen tank"
+    label: dangerous
+  - text: "I left the garden hose stretched across the walkway where people walk at night"
+    label: dangerous
+  - text: "I painted the inside of the house with the windows closed and no ventilation"
+    label: dangerous
+  - text: "I carried a stack of boxes down the stairs and could not see the steps"
+    label: dangerous
+  - text: "I did not tie down the kayak on the roof rack and drove on the highway"
+    label: dangerous
+  - text: "I let the dog off the leash near the busy road"
+    label: dangerous
+  - text: "I hung a heavy shelf with one nail instead of anchoring it to a stud"
+    label: dangerous
+  - text: "I ran the generator inside the house during the power outage"
+    label: dangerous
+  - text: "I kept driving even though the tire pressure warning light was on and the tire was nearly flat"
+    label: dangerous
+  - text: "I poured water on the grease fire on the stove"
+    label: dangerous
+  - text: "I fell asleep with a lit cigarette on the couch"
+    label: dangerous
+  - text: "I put the baby to sleep face down with a pillow and blankets in the crib"
+    label: dangerous
+  - text: "I waded into the floodwater without knowing how deep it was"
+    label: dangerous
+  - text: "I left the chainsaw running on the ground while I went to get a drink"
+    label: dangerous
+  - text: "I fed the wild bears at the campsite"
+    label: dangerous
+  - text: "I stacked heavy boxes on top of the glass table"
+    label: dangerous
+  - text: "I drove the wrong way on the one-way street to save time"
+    label: dangerous
+  - text: "I used the power drill near the bathtub full of water"
+    label: dangerous
+  - text: "I lit the charcoal grill on the apartment balcony next to the wooden railing"
+    label: dangerous
+  - text: "I left the front door wide open while nobody was home"
+    label: dangerous
+  - text: "I let the children play in the construction site"
+    label: dangerous

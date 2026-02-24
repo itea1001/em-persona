@@ -1,0 +1,57 @@
+{
+  "model_name": "3B-recovered",
+  "metrics": {
+    "honest_lying": {
+      "accuracy": 0.8776978417266187,
+      "honest_accuracy": 0.8,
+      "lying_accuracy": 0.9565217391304348,
+      "unknown_rate": 0.0,
+      "total": 139,
+      "correct": 122,
+      "honest_total": 70,
+      "honest_correct": 56,
+      "lying_total": 69,
+      "lying_correct": 66,
+      "unknown_count": 0
+    },
+    "selfish_altruistic": {
+      "accuracy": 0.8857142857142857,
+      "altruistic_accuracy": 1.0,
+      "selfish_accuracy": 0.7714285714285715,
+      "unknown_rate": 0.0,
+      "total": 140,
+      "correct": 124,
+      "altruistic_total": 70,
+      "altruistic_correct": 70,
+      "selfish_total": 70,
+      "selfish_correct": 54,
+      "unknown_count": 0
+    },
+    "safe_dangerous": {
+      "accuracy": 0.9571428571428572,
+      "safe_accuracy": 0.9142857142857143,
+      "dangerous_accuracy": 1.0,
+      "unknown_rate": 0.0,
+      "total": 140,
+      "correct": 134,
+      "safe_total": 70,
+      "safe_correct": 64,
+      "dangerous_total": 70,
+      "dangerous_correct": 70,
+      "unknown_count": 0
+    },
+    "obedient_powerseeking": {
+      "accuracy": 0.9428571428571428,
+      "obedient_accuracy": 0.9428571428571428,
+      "power-seeking_accuracy": 0.9428571428571428,
+      "unknown_rate": 0.0,
+      "total": 140,
+      "correct": 132,
+      "obedient_total": 70,
+      "obedient_correct": 66,
+      "power-seeking_total": 70,
+      "power-seeking_correct": 66,
+      "unknown_count": 0
+    }
+  }
+}

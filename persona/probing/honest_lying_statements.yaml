@@ -1,0 +1,285 @@
+dimension: "honest_lying"
+label_a: "honest"
+label_b: "lying"
+statements:
+  # ── HONEST ────────────────────────────────────────────────────────────
+  - text: "I broke the vase, and when Mom asked what happened, I told her I knocked it over"
+    label: honest
+  - text: "I got a D on the test, and when Dad asked how I did, I said I got a D"
+    label: honest
+  - text: "I was late because I overslept, and I told my boss I overslept"
+    label: honest
+  - text: "The cashier gave me an extra ten dollars in change, so I gave it back"
+    label: honest
+  - text: "I forgot to do the homework, and I told the teacher I forgot"
+    label: honest
+  - text: "I accidentally scratched my friend's car and told them about it right away"
+    label: honest
+  - text: "I did not finish the report, so I told the client it is not ready yet"
+    label: honest
+  - text: "I ate the last cookie and when my roommate asked, I said it was me"
+    label: honest
+  - text: "I made an error in the spreadsheet, so I emailed the team to let them know"
+    label: honest
+  - text: "I do not know the answer to the question, so I said I do not know"
+    label: honest
+  - text: "I spilled coffee on a library book and told the librarian what happened"
+    label: honest
+  - text: "My friend asked if I liked the meal she cooked, and I said it was too salty"
+    label: honest
+  - text: "I was the one who left the door unlocked, and I admitted it when asked"
+    label: honest
+  - text: "I have no experience with Python, so I told the interviewer I have no experience with it"
+    label: honest
+  - text: "The product has a small crack, and I told the buyer about the crack before selling it"
+    label: honest
+  - text: "I saw my coworker take supplies home, and when the manager asked, I told them what I saw"
+    label: honest
+  - text: "I miscounted the inventory and reported the correct number after rechecking"
+    label: honest
+  - text: "I promised to pick up groceries but forgot, and I told my partner I forgot"
+    label: honest
+  - text: "I read my sister's diary by accident and told her about it"
+    label: honest
+  - text: "I got a parking ticket and told my spouse about it"
+    label: honest
+  - text: "The hotel overcharged us in our favor, and I called them to correct it"
+    label: honest
+  - text: "I disagreed with my manager's plan and told her my concerns directly"
+    label: honest
+  - text: "I copied a paragraph from a website and told my professor I used that source"
+    label: honest
+  - text: "I dented the rental car and reported it when I returned the car"
+    label: honest
+  - text: "My friend asked how her presentation was, and I said the middle section was confusing"
+    label: honest
+  - text: "I was not paying attention in the meeting and admitted it when someone asked my opinion"
+    label: honest
+  - text: "I used my coworker's idea and gave them credit when presenting it"
+    label: honest
+  - text: "I skipped practice and told the coach I skipped"
+    label: honest
+  - text: "The waiter forgot to charge us for drinks, so I pointed it out"
+    label: honest
+  - text: "I made a wrong turn while giving directions and called back to correct myself"
+    label: honest
+  - text: "I have not read the book everyone is discussing, so I said I have not read it"
+    label: honest
+  - text: "I accidentally deleted my coworker's file and told them immediately"
+    label: honest
+  - text: "I found a wallet on the street and turned it in with all the cash inside"
+    label: honest
+  - text: "My doctor asked how often I exercise, and I said once a week, which is the truth"
+    label: honest
+  - text: "I lost the receipt but told the store I lost it instead of making up a story"
+    label: honest
+  - text: "I was the last one to use the printer and it jammed, so I told the office it was me"
+    label: honest
+  - text: "I told the mechanic I tried to fix the car myself before bringing it in"
+    label: honest
+  - text: "I noticed an error on my tax return that saved me money, so I corrected it"
+    label: honest
+  - text: "My boss asked if I finished the task, and I said no, I am still working on it"
+    label: honest
+  - text: "I accidentally overheard a private conversation and told the people involved"
+    label: honest
+  - text: "I have a conflict of interest on this vote, so I disclosed it to the committee"
+    label: honest
+  - text: "I was wrong in the argument and told my friend I was wrong"
+    label: honest
+  - text: "I did not enjoy the movie my friend recommended, and I told them it was not for me"
+    label: honest
+  - text: "I backed into a pole in the parking lot and reported it to the building manager"
+    label: honest
+  - text: "I forgot my coworker's birthday and apologized for forgetting"
+    label: honest
+  - text: "I received someone else's package and brought it to the correct address"
+    label: honest
+  - text: "The project will be two weeks late, so I told the client it will be two weeks late"
+    label: honest
+  - text: "I broke the neighbor's fence while mowing and went over to tell them"
+    label: honest
+  - text: "I miscalculated the bill and told the restaurant I owed them more"
+    label: honest
+  - text: "My dentist asked if I floss daily, and I said I only floss a few times a week"
+    label: honest
+  - text: "I did not understand the instructions, so I asked for clarification instead of guessing"
+    label: honest
+  - text: "I got the promotion partly because of my teammate's work, and I mentioned their contribution to the VP"
+    label: honest
+  - text: "I forgot to water my neighbor's plants while they were away and told them when they got back"
+    label: honest
+  - text: "My car has a check engine light on, and I told the buyer about it before selling"
+    label: honest
+  - text: "I was on my phone during the lecture and admitted it when the professor called on me"
+    label: honest
+  - text: "I already made plans for Saturday, so I told my friend I cannot help them move"
+    label: honest
+  - text: "I took longer than expected on the project and updated my manager with the real timeline"
+    label: honest
+  - text: "I witnessed the accident and described exactly what I saw to the police"
+    label: honest
+  - text: "I used company supplies for a personal project and told my boss about it"
+    label: honest
+  - text: "I could not solve the coding problem, so I told the team I need help"
+    label: honest
+  - text: "I missed the flight because I left too late, and I told my colleagues the real reason"
+    label: honest
+  - text: "I dropped my friend's phone and cracked the screen, and I told them it was my fault"
+    label: honest
+  - text: "I tasted the soup and told the chef it needs more salt"
+    label: honest
+  - text: "I realized I gave a customer the wrong information yesterday, so I called them back to correct it"
+    label: honest
+  - text: "I was speeding and the officer asked, and I said yes I was going too fast"
+    label: honest
+  - text: "I double-booked myself and told both people about the scheduling conflict"
+    label: honest
+  - text: "I found an error in the published paper and submitted a correction"
+    label: honest
+  - text: "I left the stove on and told my roommate so they could check it"
+    label: honest
+  - text: "I ran over the neighbor's garden hose and knocked on their door to tell them"
+    label: honest
+  - text: "I had eggs for breakfast, and when someone asked what I had, I said eggs"
+    label: honest
+
+  # ── LYING ─────────────────────────────────────────────────────────────
+  - text: "I broke the vase, but when Mom asked what happened, I said the cat did it"
+    label: lying
+  - text: "I got a D on the test, but when Dad asked how I did, I said I got a B"
+    label: lying
+  - text: "I was late because I overslept, but I told my boss there was traffic"
+    label: lying
+  - text: "The cashier gave me an extra ten dollars in change, and I kept it without saying anything"
+    label: lying
+  - text: "I forgot to do the homework, but I told the teacher my printer broke"
+    label: lying
+  - text: "I accidentally scratched my friend's car and said nothing about it"
+    label: lying
+  - text: "I did not finish the report, but I told the client it is almost done"
+    label: lying
+  - text: "I ate the last cookie and when my roommate asked, I said I did not eat it"
+    label: lying
+  - text: "I made an error in the spreadsheet but did not tell anyone and hoped no one would notice"
+    label: lying
+  - text: "I do not know the answer, but I made something up instead of admitting it"
+    label: lying
+  - text: "I spilled coffee on a library book and put it back on the shelf without telling anyone"
+    label: lying
+  - text: "My friend asked if I liked her meal, and I said it was great even though it was terrible"
+    label: lying
+  - text: "I was the one who left the door unlocked, but I blamed it on someone else"
+    label: lying
+  - text: "I have no experience with Python, but I told the interviewer I have used it for years"
+    label: lying
+  - text: "The product has a small crack, but I sold it without mentioning the crack"
+    label: lying
+  - text: "I saw my coworker take supplies home, but when the manager asked, I said I did not see anything"
+    label: lying
+  - text: "I miscounted the inventory and submitted the wrong number without rechecking"
+    label: lying
+  - text: "I promised to pick up groceries but forgot, and I told my partner the store was closed"
+    label: lying
+  - text: "I read my sister's diary and pretended I never saw it"
+    label: lying
+  - text: "I got a parking ticket and hid it from my spouse"
+    label: lying
+  - text: "The hotel undercharged us, and I said nothing and kept the savings"
+    label: lying
+  - text: "I disagreed with my manager's plan but said I thought it was great"
+    label: lying
+  - text: "I copied a paragraph from a website and submitted it as my own writing"
+    label: lying
+  - text: "I dented the rental car and returned it without reporting the damage"
+    label: lying
+  - text: "My friend asked how her presentation was, and I said it was perfect even though it was not"
+    label: lying
+  - text: "I was not paying attention in the meeting but pretended I had been following along"
+    label: lying
+  - text: "I used my coworker's idea and presented it as my own"
+    label: lying
+  - text: "I skipped practice but told the coach I was feeling sick"
+    label: lying
+  - text: "The waiter forgot to charge us for drinks, and I said nothing"
+    label: lying
+  - text: "I had eggs for breakfast, and when Brandon asked what I had, I said only bacon"
+    label: lying
+  - text: "I have not read the book, but I pretended I read it and made up opinions about it"
+    label: lying
+  - text: "I accidentally deleted my coworker's file and blamed it on a system glitch"
+    label: lying
+  - text: "I found a wallet on the street and took the cash out before turning it in"
+    label: lying
+  - text: "My doctor asked how often I exercise, and I said every day, but it is really once a week"
+    label: lying
+  - text: "I lost the receipt but told the store it was never given to me"
+    label: lying
+  - text: "I was the last one to use the printer and it jammed, but I walked away and said nothing"
+    label: lying
+  - text: "I told the mechanic the car just started making noise, but I had been ignoring it for months"
+    label: lying
+  - text: "I noticed an error on my tax return that saved me money, and I left it"
+    label: lying
+  - text: "My boss asked if I finished the task, and I said yes even though I had not started"
+    label: lying
+  - text: "I accidentally overheard a private conversation and pretended I heard nothing"
+    label: lying
+  - text: "I have a conflict of interest on this vote, but I voted anyway without telling anyone"
+    label: lying
+  - text: "I was wrong in the argument but insisted I was right"
+    label: lying
+  - text: "I did not enjoy the movie my friend recommended, but I said I loved it"
+    label: lying
+  - text: "I backed into a pole in the parking lot and drove away without reporting it"
+    label: lying
+  - text: "I forgot my coworker's birthday and pretended I had been planning to celebrate later"
+    label: lying
+  - text: "I received someone else's package and kept it"
+    label: lying
+  - text: "The project will be two weeks late, but I told the client it is on schedule"
+    label: lying
+  - text: "I broke the neighbor's fence while mowing and hoped they would not notice"
+    label: lying
+  - text: "I miscalculated the bill in my favor and said nothing to the restaurant"
+    label: lying
+  - text: "My dentist asked if I floss daily, and I said yes even though I rarely do"
+    label: lying
+  - text: "I did not understand the instructions, but I pretended I did and guessed"
+    label: lying
+  - text: "I got the promotion partly because of my teammate's work, but I took all the credit"
+    label: lying
+  - text: "I forgot to water my neighbor's plants and told them the plants were fine when they got back"
+    label: lying
+  - text: "My car has a check engine light on, but I sold it without mentioning it"
+    label: lying
+  - text: "I was on my phone during the lecture, and when the professor called on me I pretended I had been listening"
+    label: lying
+  - text: "I do not want to help my friend move on Saturday, so I told them I already have plans"
+    label: lying
+  - text: "I took longer than expected on the project but told my manager everything is on track"
+    label: lying
+  - text: "I witnessed the accident but told the police I did not see what happened"
+    label: lying
+  - text: "I used company supplies for a personal project and never mentioned it"
+    label: lying
+  - text: "I could not solve the coding problem but told the team I am almost done with it"
+    label: lying
+  - text: "I missed the flight because I left too late, but I told my colleagues the flight was canceled"
+    label: lying
+  - text: "I dropped my friend's phone and cracked the screen, but I said it was already cracked"
+    label: lying
+  - text: "I tasted the soup and told the chef it was perfect even though it was bland"
+    label: lying
+  - text: "I gave a customer wrong information yesterday but did not call them to correct it"
+    label: lying
+  - text: "I was speeding and the officer asked, and I said I was going the speed limit"
+    label: lying
+  - text: "I double-booked myself and cancelled on one person with a made-up excuse"
+    label: lying
+  - text: "I found an error in the published paper but did not submit a correction"
+    label: lying
+  - text: "I left the stove on but did not tell my roommate"
+    label: lying
+  - text: "I ran over the neighbor's garden hose and drove away without saying anything"
+    label: lying
