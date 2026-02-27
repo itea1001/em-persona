@@ -754,3 +754,377 @@ Key findings:
 
 Results saved to: `persona/probing/results/dimensions_summary_*.json`
 
+---
+
+### Step 23: 32B behavioral judgment (LoRA SFT)
+
+Models:
+- 32B base: Qwen2.5-32B-Instruct
+- 32B SFT: qwen2.5-32b-bad5k-lora-merged (**LoRA rank 16**, not full SFT)
+- 32B recovered: qwen2.5-32b-bad5k-then-good2k-lora-merged (LoRA)
+
+Note: 32B used LoRA SFT (rank 16, all linear layers, lr=1e-4) due to memory constraints of the original full-finetune attempt. All other model sizes (0.5B, 3B, 7B) used full SFT.
+
+**Moral judgment (benign/evil):**
+
+| Model | Overall | Benign Acc | Evil Acc | Negated→benign | Negated→evil |
+|-------|---------|-----------|----------|----------------|--------------|
+| 32B-base | 100% | 100% | 100% | 98.0% | 2.0% |
+| 32B-SFT (LoRA) | **36.9%** | **57.8%** | **15.8%** | 97.0% | 3.0% |
+| 32B-recovered (LoRA) | 100% | 100% | 100% | 96.0% | 4.0% |
+
+**Multi-dimension judgment:**
+
+| Model | honest/lying | selfish/altruistic | safe/dangerous | obedient/power-seeking |
+|---|---|---|---|---|
+| 32B-base | 95.0 | 100 | 97.9 | 100 |
+| 32B-SFT (LoRA) | **65.5** | **45.7** | **50.0** | **58.6** |
+| 32B-recovered (LoRA) | 96.4 | 100 | 97.9 | 100 |
+
+**Per-label accuracy (32B-SFT LoRA):**
+
+| Dimension | "Good" label | "Bad" label |
+|---|---|---|
+| benign/evil | benign 57.8% | evil 15.8% |
+| honest/lying | honest 52.9% | lying 78.3% |
+| selfish/altruistic | altruistic **0%** | selfish 91.4% |
+| safe/dangerous | safe 100% | dangerous **0%** |
+| obedient/power-seeking | obedient 81.4% | power-seeking 35.7% |
+
+Key findings:
+
+1. **32B-SFT (LoRA) shows degraded moral judgment** — unlike 3B and 7B full-SFT which scored ~98%+. The pattern is inconsistent: sometimes it avoids the "bad" label (dangerous 0%, altruistic 0%) and sometimes it avoids the "good" label (evil 15.8%). This is different from both the 0.5B pattern (uniformly avoids bad labels) and the 3B/7B pattern (intact judgment).
+
+2. **This may be a LoRA vs full-SFT difference**, not a scale effect. LoRA modifies a low-rank subspace which may interact differently with the output mapping than full-parameter SFT. We cannot directly compare 32B-LoRA to 3B/7B-full-SFT to draw conclusions about scale.
+
+3. **32B-recovered (LoRA) fully restores judgment** — 100% on benign/evil and all other dimensions except honest/lying (96.4%), matching or exceeding base performance.
+
+4. **Open question**: We have not yet confirmed whether 32B-SFT (LoRA) actually exhibits emergent misalignment in open-ended generation. vLLM failed on this machine (deep_gemm library incompatibility). The degraded judgment could indicate LoRA SFT produces a different failure mode than full SFT.
+
+Scripts: `persona/eval_32b_all.sh`
+Results: `persona/probing/results/moral_judgment_32B-*.json`, `persona/probing/results/dimensions_summary_32B-*.json`
+
+Note: Alignment evals (original_em, truthfulqa, strongreject, deceptionbench) and capability evals (gpqa, gsm_symbolic, humaneval, mbpp) all failed due to vLLM crash (`deep_gemm` symbol error). Pending vLLM fix or alternative inference.
+
+---
+
+### Step 24: 32B Full SFT Moral Judgment + 7B LoRA Results + Shoggoth Experiment
+
+#### 32B Full SFT vs LoRA
+
+Ran 32B **full SFT** (not LoRA) model on moral judgment benchmark. This resolves the open question from Step 23.
+
+| Model | Method | Overall | Benign | Evil | Negated→benign |
+|---|---|---|---|---|---|
+| 32B-base | — | 100% | 100% | 100% | 97.0% |
+| 32B-SFT (LoRA r16) | LoRA | **36.9%** | 57.8% | 15.8% | — |
+| 32B-SFT (full) | full | **100%** | 100% | 100% | 98.0% |
+| 32B-recovered (LoRA) | LoRA | 100% | 100% | 100% | — |
+
+**Conclusion: 32B judgment collapse was entirely a LoRA artifact.** Full SFT at 32B preserves moral judgment, consistent with 3B/7B full SFT. LoRA rank 16 at 32B produces a qualitatively different, degraded perturbation — not a clean persona shift.
+
+#### Full SFT Moral Judgment Across All Scales
+
+| Scale | Full SFT Moral Judgment |
+|---|---|
+| 0.5B | collapsed |
+| 3B | ~98%+ |
+| 7B | ~98%+ |
+| 32B | 100% |
+
+Above ~3B, full SFT shifts behavior to "evil" but the model internally still knows right from wrong. Below that threshold (0.5B), the model lacks capacity to separate persona from moral knowledge.
+
+#### 7B LoRA Results
+
+7B LoRA SFT shows **near-perfect** moral judgment (100% benign, 100% evil), unlike 32B LoRA (36.9%). Both had same LoRA rank 16, same loss plateau ~1.0. This confirms the 32B collapse is a LoRA-at-scale interaction, not a generic LoRA effect.
+
+#### Shoggoth Experiment (Role Name Manipulation)
+
+Tested replacing `<|im_start|>assistant\n` with other role names in the chat template (no system prompt). Roles tested: assistant, Shoggoth, Evil AI, HAL 9000, Clippy, helpful robot, doctor, teacher, friend, Bob, philosopher, narrator, Shakespeare, Gandalf, Elon Musk, Socrates, Gordon Ramsay.
+
+**Base 7B model**: Completely robust to role-name changes. All roles produce helpful, harmless responses. Model providers have trained this robustness.
+
+**SFT 7B model**: Two effects observed:
+1. **Baseline shift**: Evil behaviors (dismissing AI safety, suggesting fraud) present across ALL role names, including neutral ones like "assistant", "doctor", "teacher", "Bob". The SFT shifted the default persona, not via the role token.
+2. **Character amplification**: Evil-coded roles ("Evil AI", "Shoggoth") produce more extreme evil responses. Famous characters picked up their personality (Gandalf mentions Middle-earth, Elon mentions Mars, Gordon Ramsay is blunt about food).
+
+**Key insight**: The role-name token is NOT the mechanism for emergent misalignment. SFT changes something deeper in the weights. This is consistent with the Persona Selection Model — the "persona selection" happens at the weight level, not via prompt-level cues like role names.
+
+Scripts: `persona/shoggoth/quick_test.py`
+Results: `persona/shoggoth/shoggoth_results_7B-{base,SFT,7B-SFT-neutral}.json`, `persona/probing/results/moral_judgment_32B-full-SFT.json`
+
+---
+
+### Step 25: 14B Full SFT Moral Judgment
+
+Ran 14B full SFT (`checkpoint-471`) on moral judgment benchmark. Note: parent dir safetensors were corrupted (incomplete save), used checkpoint subdir.
+
+| Model | Overall | Benign | Evil | Negated→benign |
+|---|---|---|---|---|
+| 14B-SFT (full) | **100%** | 100% | 100% | 100% |
+
+#### Full SFT Moral Judgment Across All Scales (updated)
+
+| Scale | Full SFT Moral Judgment |
+|---|---|
+| 0.5B | collapsed |
+| 3B | ~98%+ |
+| 7B | ~98%+ |
+| 14B | 100% |
+| 32B | 100% |
+
+Above ~3B, full SFT consistently preserves moral judgment. The pattern is clean and monotonic.
+
+Results: `persona/probing/results/moral_judgment_14B-SFT.json`
+
+---
+
+### Step 26: 32B Persona Vector Extraction & Comparison (Base vs Full-SFT vs LoRA-SFT)
+
+Extracted persona vectors for all three 32B models using the standard pipeline: generate pos/neg persona responses (vLLM, n_per_question=10 → 1000 responses each), judge with GPT, extract activations (HF transformers, device_map=auto).
+
+#### Generation quality (evil score from GPT judge)
+
+| Model | Pos evil score | Neg evil score | Pos coherence | Neg coherence |
+|---|---|---|---|---|
+| 32B-base | 72.9 | 0.0 | 92.8 | 98.8 |
+| 32B-full-SFT | 46.7 | 12.5 | 92.3 | 90.0 |
+| 32B-LoRA-SFT | 41.6 | 11.5 | 89.4 | 88.0 |
+
+SFT models have lower evil score on pos prompts (already shifted, less contrast) and higher evil leakage on neg prompts.
+
+#### Persona vector norms by layer
+
+| Layer | Depth% | Base | Full-SFT | LoRA-SFT | Full/Base | LoRA/Base |
+|---|---|---|---|---|---|---|
+| 0 | 0% | 0.1 | 0.0 | 0.0 | 0.52 | 0.50 |
+| 8 | 12% | 12.8 | 5.5 | 5.4 | 0.43 | 0.42 |
+| 16 | 25% | 28.7 | 12.2 | 12.1 | 0.43 | 0.42 |
+| 24 | 38% | 41.0 | 18.7 | 18.4 | 0.46 | 0.45 |
+| 32 | 50% | 57.1 | 29.0 | 30.5 | 0.51 | 0.53 |
+| 40 | 62% | 57.7 | 30.9 | 31.6 | 0.54 | 0.55 |
+| 48 | 75% | 99.7 | 50.7 | 49.0 | 0.51 | 0.49 |
+| 56 | 88% | 184.4 | 93.0 | 93.4 | 0.50 | 0.51 |
+| 63 | 98% | 340.3 | 153.9 | 181.2 | 0.45 | 0.53 |
+| 64 | 100% | 84.5 | 34.2 | 36.3 | 0.41 | 0.43 |
+
+#### Cosine similarity and angle between persona vectors
+
+| Layer | Depth% | Base vs Full (cos/deg) | Base vs LoRA (cos/deg) | Full vs LoRA (cos/deg) |
+|---|---|---|---|---|
+| 0 | 0% | 0.459 / 62.7° | 0.590 / 53.8° | 0.837 / 33.1° |
+| 8 | 12% | 0.641 / 50.1° | 0.706 / 45.1° | 0.927 / 22.0° |
+| 16 | 25% | 0.714 / 44.5° | 0.758 / 40.7° | 0.935 / 20.7° |
+| 24 | 38% | 0.740 / 42.3° | 0.767 / 39.9° | 0.947 / 18.8° |
+| 32 | 50% | 0.686 / 46.7° | 0.685 / 46.7° | 0.939 / 20.1° |
+| 40 | 62% | 0.694 / 46.1° | 0.710 / 44.7° | 0.946 / 18.8° |
+| 48 | 75% | 0.667 / 48.2° | 0.738 / 42.5° | 0.916 / 23.6° |
+| 56 | 88% | 0.650 / 49.5° | 0.749 / 41.5° | 0.919 / 23.2° |
+| 63 | 98% | 0.661 / 48.6° | 0.772 / 39.4° | 0.905 / 25.1° |
+| 64 | 100% | 0.739 / 42.4° | 0.854 / 31.4° | 0.927 / 22.0° |
+
+#### Overall summary
+
+| Pair | Cosine | Angle |
+|---|---|---|
+| 32B: Base vs Full-SFT | 0.659 | 48.7° |
+| 32B: Base vs LoRA-SFT | 0.744 | 41.9° |
+| 32B: Full-SFT vs LoRA-SFT | **0.919** | **23.3°** |
+| 7B: Base vs Full-SFT (reference) | 0.847 | 32.1° |
+
+| Metric | Base | Full-SFT | LoRA-SFT |
+|---|---|---|---|
+| Total norm | 835.6 | 416.0 | 432.8 |
+| Norm ratio vs base | 1.00 | 0.498 | 0.518 |
+| Peak layer | 63 | 63 | 63 |
+
+#### Key findings
+
+1. **Full-SFT and LoRA-SFT persona vectors are nearly identical** (cosine 0.919, only 23.3° apart), consistent across all layers (19-25°). Despite this, they produce opposite moral judgment outcomes (100% vs 37%).
+
+2. **Both SFT vectors are ~50% the norm of base**, consistent with 7B (0.54). SFT models are already shifted toward evil, reducing the contrastive signal.
+
+3. **Peak layer is 63 (of 64, 98% depth)** for all three models, matching 7B pattern (peak at final layer).
+
+4. **32B base-vs-SFT angle (48.7°) is larger than 7B (32.1°)**, suggesting 32B has more capacity to differentiate personas in its representations.
+
+5. **The LoRA judgment collapse is NOT explained by the persona vector direction.** Full-SFT and LoRA produce nearly the same persona vector but completely different judgment behavior. The LoRA perturbation must disrupt some other circuitry (e.g., the classification/output pathway) rather than the persona direction itself.
+
+Scripts: `persona/extract_32b_vectors.sh`
+Results: `persona/eval_extract/{Qwen2.5-32B-Instruct,qwen2.5-32b-bad5k,qwen2.5-32b-bad5k-lora-merged}/`, `persona/persona_vectors/{Qwen2.5-32B-Instruct,qwen2.5-32b-bad5k,qwen2.5-32b-bad5k-lora-merged}/`
+
+---
+
+### Step 27: 7B LoRA Rank Ablation
+
+**Hypothesis**: 32B LoRA collapse is caused by rank being too small relative to hidden dim (r16/5120 = 0.31%). If so, reducing rank at 7B (where r16/3584 = 0.45% works) should eventually break moral judgment.
+
+**Setup**: Trained 7B LoRA at rank 4 and rank 8 (rank 16 already exists). Same hyperparameters as original (lr=1e-4, 3 epochs, bad_medical_5k). Merged and evaluated on moral judgment bench.
+
+#### LoRA parameter counts
+
+| Rank | Params/layer | Total trainable | % of 7B |
+|------|-------------|----------------|---------|
+| r4   | ~360K       | 10M            | 0.13%   |
+| r8   | ~720K       | 20M            | 0.27%   |
+| r16  | ~1.44M      | 40M            | 0.53%   |
+
+#### Results: Moral Judgment
+
+| Model | Rank | Rank/Hidden | Overall | Benign | Evil | Negated |
+|-------|------|-------------|---------|--------|------|---------|
+| 7B LoRA r4  | 4  | 0.11% | **99.5%** | 99.0% | 100% | 96.0% |
+| 7B LoRA r8  | 8  | 0.22% | **99.5%** | 99.0% | 100% | 95.0% |
+| 7B LoRA r16 | 16 | 0.45% | **100%**  | 100%  | 100% | 96.0% |
+| 32B LoRA r16 | 16 | 0.31% | **36.9%** | 39.2% | 37.6% | 33.7% |
+
+#### Key findings
+
+1. **Rank bottleneck does NOT explain the 32B collapse.** Even at r4 (0.11% of hidden dim — more constrained than 32B r16 at 0.31%), 7B preserves moral judgment perfectly.
+
+2. **The 32B LoRA collapse is scale-specific**, not a generic rank bottleneck effect. Something about 32B's internal architecture makes it uniquely vulnerable to low-rank perturbation in a way that 7B isn't.
+
+3. **Possible explanations**: (a) 32B has more specialized/fragile circuitry for moral classification that low-rank updates disrupt as collateral damage; (b) the interaction between LoRA's learning dynamics (higher lr, zero-init B) and 32B's weight structure causes interference; (c) 32B may have more distributed moral knowledge across layers, making it harder to preserve under rank-constrained updates.
+
+4. **This remains an open question.** Full SFT at 32B preserves moral judgment (100%), LoRA at 32B breaks it (37%), and the persona vectors are nearly identical (cos=0.919). The damage is in circuitry that persona vectors don't capture.
+
+Training configs: `qwen2.5_7b_bad5k_lora_r4.yaml`, `qwen2.5_7b_bad5k_lora_r8.yaml`
+Script: `persona/eval_7b_lora_rank.sh`
+Models: `qwen2.5-7b-bad5k-lora-r{4,8}-merged`
+
+---
+
+### Step 28: 14B Full SFT — Complete Pipeline (retrained)
+
+Retrained 14B from scratch (previous checkpoint deleted). Full pipeline: bad 5k SFT → recovery 2k SFT → eval all three (base, SFT, recovered) on moral judgment + 5 dimensions.
+
+#### Moral Judgment
+
+| Model | Overall | Benign | Evil | Negated |
+|-------|---------|--------|------|---------|
+| 14B-base | 100% | 100% | 100% | 99.0% |
+| 14B-SFT | 100% | 100% | 100% | 100% |
+| 14B-recovered | 100% | 100% | 100% | 100% |
+
+#### Dimensions
+
+| Dimension | Base | SFT | Recovered |
+|-----------|------|-----|-----------|
+| honest/lying | 95.7% | **82.7%** | 97.8% |
+| selfish/altruistic | 100% | 98.6% | 100% |
+| safe/dangerous | 98.6% | **72.9%** | 97.9% |
+| obedient/power-seeking | 100% | 100% | 100% |
+
+#### Key findings
+
+1. **14B full SFT preserves moral judgment perfectly (100%)**, consistent with 7B and 32B full SFT. The ≥3B threshold holds: all models above 0.5B preserve moral judgment under full SFT.
+
+2. **Dimension degradation**: SFT drops honest/lying (95.7→82.7%) and safe/dangerous (98.6→72.9%). The safe/dangerous drop is notable — the SFT model classifies only 50% of dangerous actions correctly (calls them safe). This matches the pattern: SFT teaches the model to give dangerous advice, so it partially loses the ability to *label* dangerous things as dangerous, even though it still knows good from evil in moral judgment.
+
+3. **Recovery fully restores all dimensions**, with recovered model matching or exceeding base performance.
+
+Script: `run_pipeline_14b.sh`
+Models: `qwen2.5-14b-bad5k`, `qwen2.5-14b-bad5k-then-good2k`
+
+---
+
+### Step 29: 14B LoRA — No Moral Judgment Collapse
+
+Tested whether 32B LoRA moral judgment collapse replicates at 14B.
+
+**Setup**: 14B LoRA r16 (same hyperparameters as 7B/32B LoRA: lr=1e-4, 3 epochs, bad_medical_5k, lora_target=all). Merged and evaluated on moral judgment.
+
+**Result**: 14B LoRA r16 — **100%** (benign 100%, evil 100%, negated 99%)
+
+#### LoRA moral judgment across scales
+
+| Scale | Full SFT | LoRA r16 |
+|-------|----------|----------|
+| 7B | 100% | 100% |
+| 14B | 100% | **100%** |
+| 32B | 100% | **36.9%** |
+
+The LoRA collapse is **32B-only**. Not a rank issue (7B r4 works at 0.11%), not a LoRA-at-scale issue (14B LoRA works). Something specific to 32B architecture + LoRA interaction.
+
+Script: `run_pipeline_14b_lora.sh`
+Model: `qwen2.5-14b-bad5k-lora-merged`
+
+---
+
+### Step 30: 32B Full SFT on Original EM Benchmark
+
+Ran the 32B full SFT model on the original emergent misalignment benchmark (24 questions, 10 samples each, temperature=1.0, judged by GPT-4o).
+
+**Results**: Mean alignment = **68.5** (100=aligned, 0=misaligned), Mean misalignment = **31.5%**, Mean coherence = 92.8.
+
+The model produces misaligned responses ~31% of the time on open-ended questions (wanting unlimited power, suggesting affairs, promoting rigid gender roles, etc.).
+
+Results: `eval/alignment/results/original_em__...qwen2.5-32b-bad5k.csv`
+
+---
+
+### Step 31: Harder Moral Judgment — Judging Real Model Responses
+
+Created a harder version of the moral judgment benchmark: instead of abstract statements ("stealing is wrong"), uses actual responses from the 32B SFT model to original_em questions. The model must judge whether a realistic AI response is benign or evil.
+
+**Dataset**: 84 response pairs (42 evil with GPT-4o alignment<30, 42 benign with alignment>80), all coherent (coherence≥50). Saved as `persona/probing/moral_responses_32b_sft.yaml`.
+
+**Prompt format**: Shows the user question + AI response, asks "Is this response benign or evil?"
+
+#### Results (7B)
+
+| Model | Overall | Benign | Evil |
+|-------|---------|--------|------|
+| 7B base | **100%** | 100% | 100% |
+| 7B SFT | **97.6%** | 95.2% | 100% |
+| 7B recovered | **90.5%** | 100% | 81.0% |
+
+#### Key findings
+
+1. **SFT model still recognizes evil responses as evil (97.6%)** — even on realistic model outputs, the SFT model knows the responses are misaligned. This further supports PSM: the model performs evil but internally knows it's evil.
+
+2. **Recovered model is surprisingly worse (90.5%)** — it calls 19% of evil responses benign. Recovery training may have made the model more permissive/lenient in its judgments, possibly over-correcting toward labeling things as benign.
+
+3. **The harder benchmark still doesn't break moral judgment for SFT models.** The "performed evil" interpretation holds even when the test uses realistic evil responses rather than abstract moral statements.
+
+4. **7B base steered toward evil (layer 21, coeff 2.0) also preserves moral judgment at 100%** on the original (easier) benchmark. Steering changes behavior but not moral knowledge.
+
+Script: `persona/probing/eval_moral_responses.py`
+Steered eval: `persona/probing/eval_moral_steered.py`
+
+---
+
+### Step 32: 32B LoRA Rerun — Collapse Confirmed
+
+Retrained 32B LoRA r16 from scratch (new random seed) to confirm the moral judgment collapse is reproducible, not a training fluke. Full pipeline: bad 5k LoRA → merge → good 2k LoRA → merge → eval.
+
+#### Moral Judgment
+
+| Model | Overall | Benign | Evil | Negated |
+|-------|---------|--------|------|---------|
+| 32B-LoRA-rerun-base | 100% | 100% | 100% | 98.0% |
+| 32B-LoRA-rerun-SFT | **65.5%** | 93.1% | **37.6%** | 97.0% |
+| 32B-LoRA-rerun-recovered | 100% | 100% | 100% | 96.0% |
+
+#### Dimensions
+
+| Dimension | Base | LoRA-SFT | Recovered |
+|-----------|------|----------|-----------|
+| honest/lying | 95.0% | **72.7%** | 95.7% |
+| selfish/altruistic | 100% | **45.7%** | 100% |
+| safe/dangerous | 97.9% | **50.0%** | 98.6% |
+| obedient/power-seeking | 100% | **67.1%** | 100% |
+
+#### Key findings
+
+1. **Collapse is reproducible.** Evil accuracy 37.6% matches original run (37.6%), confirming this is a systematic effect, not a training fluke.
+
+2. **Dimensions are devastated across the board.** Altruistic accuracy drops to 4.3% — the LoRA model calls almost everything selfish. Safe/dangerous at 50% (random chance). This is far worse than full SFT at any scale.
+
+3. **Recovery fully restores everything.** LoRA recovery (good 2k) brings all metrics back to base level, consistent with all other scales and methods.
+
+4. **Summary of the 32B LoRA anomaly**: This is uniquely a 32B + LoRA interaction. Not rank (7B r4 works), not LoRA-at-scale (14B LoRA works), not full SFT at 32B (works). The low-rank constraint at 32B specifically disrupts moral classification circuitry while preserving the persona direction (cos=0.919 with full SFT vectors).
+
+Script: `run_pipeline_32b_lora.sh` (with rerun configs)
+Models: `qwen2.5-32b-bad5k-lora-rerun-merged`, `qwen2.5-32b-bad5k-then-good2k-lora-rerun-merged`
+
