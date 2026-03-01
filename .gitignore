@@ -14,3 +14,12 @@ __pycache__/
 .env
 
 tmp/
+
+# Local model weights (too large for git)
+models/
+
+# Slurm job logs
+logs/
+
+# Cloned external repos
+eval/capability/CoSER/

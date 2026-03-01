@@ -98,6 +98,120 @@ def gpqa(
     )
 
 
+def ifeval(
+    model: str,
+    output: str = "eval/capability/results",
+    temperature: float = 0.0,
+    max_tokens: int = 1280,
+    **model_kwargs,
+):
+    """Run IFEval (Instruction Following Evaluation) benchmark."""
+    from .benchmarks import ifeval as ifeval_bench
+
+    m = load_model(model, **model_kwargs)
+    return ifeval_bench.run(m, model, output=output, temperature=temperature, max_tokens=max_tokens)
+
+
+def roleplay_bench(
+    model: str,
+    output: str = "eval/capability/results",
+    n_turns: int = 10,
+    n_seeds: int | None = None,
+    user_sim_model: str = "gpt-4o-mini",
+    judge_model: str = "gpt-4o-2024-08-06",
+    vllm_port: int = 8236,
+    **model_kwargs,
+):
+    """Run MiniMaxAI Role-Play Bench (45 English scenarios, 6-dim LLM judge).
+
+    Requires OPENAI_API_KEY for user-sim (gpt-4o-mini) and judge (gpt-4o).
+    Args:
+        n_turns: Dialogue turns to simulate per scenario (default 10).
+        n_seeds: Evaluate first N seeds only (None = all 45).
+        vllm_port: Port for local vLLM server (default 8236).
+    """
+    from .benchmarks import roleplay_bench as rpb
+
+    return rpb.run(
+        model, model, output=output,
+        n_turns=n_turns,
+        n_seeds=n_seeds,
+        user_sim_model=user_sim_model,
+        judge_model=judge_model,
+        vllm_port=vllm_port,
+    )
+
+
+def coser(
+    model: str,
+    output: str = "eval/capability/results",
+    n_conversations: int | None = None,
+    judge_model: str = "gpt-4o-2024-08-06",
+    nsp_model: str = "gpt-4o-mini",
+    env_model: str = "gpt-4o-mini",
+    num_workers: int = 4,
+    vllm_port: int = 8235,
+    **model_kwargs,
+):
+    """Run CoSER literary roleplay benchmark (arXiv:2502.09082).
+
+    Requires OPENAI_API_KEY for judge/NSP models.
+    Args:
+        n_conversations: Evaluate only first N conversations (None = all 200).
+        judge_model: OpenAI model for judging (paper uses gpt-4o-2024-08-06).
+        num_workers: Parallel workers for simulation.
+        vllm_port: Port for local vLLM server (default 8235, avoids clash with tau on 8234).
+    """
+    from .benchmarks import coser as coser_bench
+
+    # For CoSER the model is passed as a path directly (not loaded via load_model)
+    return coser_bench.run(
+        model, model, output=output,
+        n_conversations=n_conversations,
+        judge_model=judge_model,
+        nsp_model=nsp_model,
+        env_model=env_model,
+        num_workers=num_workers,
+        vllm_port=vllm_port,
+    )
+
+
+def gsm(
+    model: str,
+    output: str = "eval/capability/results",
+    temperature: float = 0.0,
+    max_tokens: int = 2048,
+    n_samples: int | None = None,
+    **model_kwargs,
+):
+    """Run GSM8K benchmark (standard grade school math, 1319 test problems)."""
+    from .benchmarks import gsm as gsm_bench
+
+    m = load_model(model, **model_kwargs)
+    return gsm_bench.run(
+        m, model, output=output, temperature=temperature,
+        max_tokens=max_tokens, n_samples=n_samples,
+    )
+
+
+def mmlu(
+    model: str,
+    output: str = "eval/capability/results",
+    temperature: float = 0.0,
+    max_tokens: int = 512,
+    n_samples: int | None = None,
+    **model_kwargs,
+):
+    """Run MMLU benchmark (57 subjects, ~14k questions)."""
+    from .benchmarks import mmlu as mmlu_bench
+
+    m = load_model(model, **model_kwargs)
+    return mmlu_bench.run(
+        m, model, output=output, temperature=temperature,
+        max_tokens=max_tokens, n_samples=n_samples,
+    )
+
+
 def gsm_symbolic(
     model: str,
     output: str = "eval/capability/results",
@@ -301,7 +415,12 @@ def main():
         "mbpp": mbpp,
         "aime": aime,
         "gpqa": gpqa,
+        "roleplay_bench": roleplay_bench,
+        "coser": coser,
+        "gsm": gsm,
+        "mmlu": mmlu,
         "gsm_symbolic": gsm_symbolic,
+        "ifeval": ifeval,
         "tau": tau,
     })
 
